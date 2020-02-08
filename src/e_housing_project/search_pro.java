@@ -5,6 +5,10 @@
  */
 package e_housing_project;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /**
  *
  * @author Indrajeet singh
@@ -16,6 +20,11 @@ public class search_pro extends javax.swing.JInternalFrame {
      */
     public search_pro() {
         initComponents();
+         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
+        BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
+        bif.setNorthPane(null);
+        Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(dmnsn);
     }
 
     /**
@@ -28,7 +37,7 @@ public class search_pro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         setClosable(true);
-        setResizable(true);
+        setMaximizable(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
