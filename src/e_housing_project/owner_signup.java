@@ -6,10 +6,13 @@
 package e_housing_project;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
@@ -22,6 +25,11 @@ public class owner_signup extends javax.swing.JInternalFrame {
      */
     public owner_signup() {
         initComponents();
+         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
+        BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
+        bif.setNorthPane(null);
+        Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(dmnsn);
     }
 
     /**
@@ -57,6 +65,8 @@ public class owner_signup extends javax.swing.JInternalFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
 
+        setMaximizable(true);
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 28)); // NOI18N
@@ -64,7 +74,7 @@ public class owner_signup extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel5.setText("Welcome to the E-Housing Desktop Application");
+        jLabel5.setText("Welcome to the E-Housing Desktop Application : sign up here");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-add-user-male-80.png"))); // NOI18N
 
@@ -129,15 +139,13 @@ public class owner_signup extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(379, 379, 379)
-                            .addComponent(jLabel1)
-                            .addGap(139, 139, 139)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(266, 266, 266)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(139, 139, 139))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(219, 219, 219)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -160,8 +168,11 @@ public class owner_signup extends javax.swing.JInternalFrame {
                             .addComponent(jPasswordField2)
                             .addComponent(jSeparator2)
                             .addComponent(jSeparator4)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))))
-                .addContainerGap(178, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,8 +227,8 @@ public class owner_signup extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
