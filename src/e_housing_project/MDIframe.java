@@ -33,6 +33,7 @@ public class MDIframe extends javax.swing.JFrame {
         dp1 = new javax.swing.JDesktopPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -59,14 +60,20 @@ public class MDIframe extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setText("Welcome to the E-Housing Desktop Application");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-home-24.png"))); // NOI18N
+
         dp1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         dp1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dp1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout dp1Layout = new javax.swing.GroupLayout(dp1);
         dp1.setLayout(dp1Layout);
         dp1Layout.setHorizontalGroup(
             dp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 892, Short.MAX_VALUE)
+            .addGroup(dp1Layout.createSequentialGroup()
+                .addGap(405, 405, 405)
+                .addComponent(jLabel1)
+                .addContainerGap(463, Short.MAX_VALUE))
             .addGroup(dp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(dp1Layout.createSequentialGroup()
                     .addGap(183, 183, 183)
@@ -79,7 +86,10 @@ public class MDIframe extends javax.swing.JFrame {
         );
         dp1Layout.setVerticalGroup(
             dp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGroup(dp1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel1)
+                .addContainerGap(355, Short.MAX_VALUE))
             .addGroup(dp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(dp1Layout.createSequentialGroup()
                     .addGap(216, 216, 216)
@@ -289,6 +299,7 @@ public class MDIframe extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPopupMenu.Separator jSeparator1;
