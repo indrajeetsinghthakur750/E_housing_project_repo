@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package e_housing_project;
+import static e_housing_project.MDIframe.saveMenuItem;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JMenuItem;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -25,6 +27,9 @@ public class owner_page extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
+        JMenuItem saveMenuItem1 = saveMenuItem;
+        saveMenuItem1.setVisible(false);
+       
     }
 
     /**
