@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package e_housing_project;
+  
 
-import javax.swing.JDesktopPane;
+import static e_housing_project.MDIframe.dp1;
 
 /**
  *
@@ -13,13 +14,38 @@ import javax.swing.JDesktopPane;
  */
 public class MDIframe extends javax.swing.JFrame {
 
-       
+      private String s; 
+           
+      
     /**
      * Creates new form MDIframe
+     * @param status
      */
-    public MDIframe() {
+    public MDIframe(String status) {
         initComponents();
+       s=status;
+       if(s.equals("signin"))
+       {
+           owner_page op=new owner_page();
+           dp1.add(op);
+           op.setVisible(true);
+       }
+       if(s.equals("signup"))
+       {
+           owner_signup signup=new owner_signup();
+           dp1.add(signup);
+           signup.setVisible(true);
+       }
+       if(s.equals("searchproperty"))
+       {
+           search_pro sp =new search_pro();
+           dp1.add(sp);
+           sp.setVisible(true);
+       }
+     
     }
+    
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -256,37 +282,7 @@ public class MDIframe extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MDIframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MDIframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MDIframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MDIframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MDIframe().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;

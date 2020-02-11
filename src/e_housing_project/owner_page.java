@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package e_housing_project;
+import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.MDIframe.saveMenuItem;
 
 import java.awt.Dimension;
@@ -75,6 +76,11 @@ public class owner_page extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Add Property");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Update Property");
 
@@ -143,6 +149,14 @@ public class owner_page extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        add_property ap=new add_property();
+        dp1.add(ap);
+        ap.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
