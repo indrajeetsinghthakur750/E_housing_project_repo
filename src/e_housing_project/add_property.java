@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package e_housing_project;
+import static e_housing_project.starting_frame.owner_id;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-
 /**
  *
  * @author Indrajeet singh
@@ -44,6 +44,7 @@ public class add_property extends javax.swing.JInternalFrame {
         jOptionPane1 = new javax.swing.JOptionPane();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jOptionPane2 = new javax.swing.JOptionPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -375,8 +376,7 @@ public class add_property extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -392,7 +392,7 @@ public class add_property extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
 
@@ -404,57 +404,73 @@ public class add_property extends javax.swing.JInternalFrame {
         String type = jComboBox1.getSelectedItem().toString();
         
         int rent =Integer.parseInt(jTextField2.getText());
+        System.out.print(rent);
 //        String posted_date =jTextField4.getText().toString();
         int area = Integer.parseInt(jTextField1.getText());
-        int floor= jComboBox2.getSelectedIndex();
-        int locality_id=1;
-        
-        String water= jComboBox3.getSelectedItem().toString();
+        System.out.print(area);
+        int floor;
+        floor = jComboBox2.getSelectedIndex();
+        System.out.print(floor);
+        int locality_id=20;
+        System.out.print(locality_id);
+        String water= jComboBox7.getSelectedItem().toString();
+        System.out.print(water);
         String electricity = jComboBox5.getSelectedItem().toString();
-        String facing= jComboBox7.getSelectedItem().toString();
-        String preferred=null;
-          if(jCheckBox7.isEnabled())
+        System.out.print(electricity);
+        String facing= jComboBox3.getSelectedItem().toString();
+        System.out.print(facing);
+        String preferred="";
+          if(jCheckBox7.isSelected())
             preferred+="  Family";
-        if(jCheckBox8.isEnabled())
+        if(jCheckBox8.isSelected())
             preferred+=" Bachlor ";
-        if(jCheckBox9.isEnabled())
+        if(jCheckBox9.isSelected())
             preferred+=" both ";
+        System.out.print(preferred);
+        
         String furnishing= jComboBox4.getSelectedItem().toString();
+        System.out.print(furnishing);
         
-        
-        String amenties=null;
-        if(jCheckBox1.isEnabled())
+        String amenties="";
+        if(jCheckBox1.isSelected())
             amenties+=" Lift ";
-        if(jCheckBox2.isEnabled())
+        if(jCheckBox2.isSelected())
             amenties+=" Garden ";
-        if(jCheckBox3.isEnabled())
+        if(jCheckBox3.isSelected())
             amenties+=" Parking ";
-        if(jCheckBox4.isEnabled())
+        if(jCheckBox4.isSelected())
             amenties+=" Air-conditioned ";
-        if(jCheckBox5.isEnabled())
+        if(jCheckBox5.isSelected())
             amenties+=" Water-tank ";
-        if(jCheckBox6.isEnabled())
+        if(jCheckBox6.isSelected())
             amenties+=" Wi-fi ";
-      
+      System.out.print(amenties);
             
-        String balcony;
-        if(jRadioButton1.isEnabled())
-            balcony="Yes";
+        String balcony="";
+        if(jRadioButton1.isSelected())
+            balcony+="Yes";
         else
-            balcony="No";
+            balcony+="No";
  
-        
-         String available=null;
-        if(jRadioButton1.isEnabled())
-            balcony=" Available";
+        System.out.print(balcony);
+         String available="";
+        if(jRadioButton1.isSelected())
+            available+="yes";
         else
-            balcony="Not Available";
+            available+="Not";
       
-        String city =jTextField3.getText().toString();
-        String pincode =jTextField4.getText().toString();
-        String landmark =jTextField5.getText().toString();
-        String colony =jTextField6.getText().toString();
-        String sql ="";
+        System.out.print(available);
+        int id=owner_id;
+        String city =jTextField3.getText();
+        System.out.print(city);
+        String pincode =jTextField4.getText();
+        System.out.print(pincode);
+        String landmark =jTextField5.getText();
+        System.out.print(landmark);
+        String colony =jTextField6.getText();
+        System.out.print(colony);
+        String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
+       
         Statement stmt;
         try{
         System.out.println("2");
@@ -465,13 +481,14 @@ public class add_property extends javax.swing.JInternalFrame {
            System.out.println("4");
             stmt=c.createStatement();
              System.out.println("5");
-             stmt.executeUpdate("insert into property_master(type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values('"+type+"',"+rent+",'sysdate',"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")");            
+             stmt.executeUpdate(sql);            
             
            System.out.print("HI");
            
         }
         catch(SQLException e)
         {
+            JOptionPane.showMessageDialog(null,"Error"+e);
             
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -513,6 +530,7 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JOptionPane jOptionPane1;
+    private javax.swing.JOptionPane jOptionPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
