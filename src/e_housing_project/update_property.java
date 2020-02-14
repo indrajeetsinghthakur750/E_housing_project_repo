@@ -1,35 +1,33 @@
+package e_housing_project;
+
+import static e_housing_project.owner_page.show_property;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package e_housing_project;
-import static e_housing_project.starting_frame.owner_id;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /**
  *
  * @author Indrajeet singh
  */
-public class add_property extends javax.swing.JInternalFrame {
+public class update_property extends javax.swing.JInternalFrame {
 
-    
     /**
-     * Creates new form add_property
+     * Creates new form update_property
      */
-    public add_property() {
+    public update_property() {
         initComponents();
-            this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
+          this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
         BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
+        show_property();
     }
 
     /**
@@ -41,29 +39,6 @@ public class add_property extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jOptionPane1 = new javax.swing.JOptionPane();
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        jOptionPane2 = new javax.swing.JOptionPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -95,58 +70,25 @@ public class add_property extends javax.swing.JInternalFrame {
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Area of property");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("City");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("Pincode");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("Rent ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Landmark");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Colony");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
-
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 280, -1));
-
-        jTextField2.setBorder(null);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 280, -1));
-
-        jTextField3.setBorder(null);
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, -1));
-
-        jTextField4.setBorder(null);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, -1));
-
-        jTextField5.setBorder(null);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 280, -1));
-
-        jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 280, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 280, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 280, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 280, -1));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 280, -1));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 280, -1));
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -174,10 +116,8 @@ public class add_property extends javax.swing.JInternalFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Balcony");
 
-        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Yes");
 
-        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
 
         jCheckBox1.setText("Lift");
@@ -206,10 +146,8 @@ public class add_property extends javax.swing.JInternalFrame {
 
         jCheckBox4.setText("Air-conditioned");
 
-        buttonGroup2.add(jRadioButton3);
         jRadioButton3.setText("No");
 
-        buttonGroup2.add(jRadioButton4);
         jRadioButton4.setText("Yes");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -300,7 +238,7 @@ public class add_property extends javax.swing.JInternalFrame {
                                         .addComponent(jCheckBox5)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBox4)))))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,141 +301,89 @@ public class add_property extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Add Property");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Area of property");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("City");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Pincode");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Rent ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Landmark");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setText("Colony");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
+
+        jTextField1.setBorder(null);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 280, -1));
+
+        jTextField2.setBorder(null);
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 280, -1));
+
+        jTextField3.setBorder(null);
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, -1));
+
+        jTextField4.setBorder(null);
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, -1));
+
+        jTextField5.setBorder(null);
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 280, -1));
+
+        jTextField6.setBorder(null);
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 280, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 280, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 280, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 280, -1));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 280, -1));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 280, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(212, 212, 212)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(443, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(384, 384, 384)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(34, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String type = jComboBox1.getSelectedItem().toString();
-        
-        int rent =Integer.parseInt(jTextField2.getText());
-        System.out.print(rent);
-//        String posted_date =jTextField4.getText().toString();
-        int area = Integer.parseInt(jTextField1.getText());
-        System.out.print(area);
-        int floor;
-        floor = jComboBox2.getSelectedIndex();
-        System.out.print(floor);
-        int locality_id=20;
-        System.out.print(locality_id);
-        String water= jComboBox7.getSelectedItem().toString();
-        System.out.print(water);
-        String electricity = jComboBox5.getSelectedItem().toString();
-        System.out.print(electricity);
-        String facing= jComboBox3.getSelectedItem().toString();
-        System.out.print(facing);
-        String preferred="";
-          if(jCheckBox7.isSelected())
-            preferred+="  Family";
-        if(jCheckBox8.isSelected())
-            preferred+=" Bachlor ";
-        if(jCheckBox9.isSelected())
-            preferred+=" both ";
-        System.out.print(preferred);
-        
-        String furnishing= jComboBox4.getSelectedItem().toString();
-        System.out.print(furnishing);
-        
-        String amenties="";
-        if(jCheckBox1.isSelected())
-            amenties+=" Lift ";
-        if(jCheckBox2.isSelected())
-            amenties+=" Garden ";
-        if(jCheckBox3.isSelected())
-            amenties+=" Parking ";
-        if(jCheckBox4.isSelected())
-            amenties+=" Air-conditioned ";
-        if(jCheckBox5.isSelected())
-            amenties+=" Water-tank ";
-        if(jCheckBox6.isSelected())
-            amenties+=" Wi-fi ";
-      System.out.print(amenties);
-            
-        String balcony="";
-        if(jRadioButton1.isSelected())
-            balcony+="Yes";
-        else
-            balcony+="No";
- 
-        System.out.print(balcony);
-         String available="";
-        if(jRadioButton1.isSelected())
-            available+="yes";
-        else
-            available+="Not";
-      
-        System.out.print(available);
-        int id=owner_id;
-        String city =jTextField3.getText();
-        System.out.print(city);
-        String pincode =jTextField4.getText();
-        System.out.print(pincode);
-        String landmark =jTextField5.getText();
-        System.out.print(landmark);
-        String colony =jTextField6.getText();
-        System.out.print(colony);
-        String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
-       
-        Statement stmt;
-        try{
-        System.out.println("2");
-          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-           System.out.println("3"); 
-          Connection c;
-            c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-           System.out.println("4");
-            stmt=c.createStatement();
-             System.out.println("5");
-             stmt.executeUpdate(sql);            
-            
-           JOptionPane.showMessageDialog(null,"Successfully added the property");
-           
-        }
-        catch(SQLException e)
-        {
-            JOptionPane.showMessageDialog(null,"Error"+e);
-            
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -529,8 +415,6 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JOptionPane jOptionPane1;
-    private javax.swing.JOptionPane jOptionPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;

@@ -7,6 +7,20 @@ package e_housing_project;
   
 
 import static e_housing_project.MDIframe.dp1;
+import static e_housing_project.owner_page.id;
+import static e_housing_project.owner_page.jTable1;
+import static e_housing_project.owner_page.show_property;
+import static e_housing_project.starting_frame.owner_id;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -23,6 +37,10 @@ public class MDIframe extends javax.swing.JFrame {
      */
     public MDIframe(String status) {
         initComponents();
+        jMenuItem1.setVisible(false);
+        jMenuItem2.setVisible(false);
+        jMenuItem3.setVisible(false);
+        jMenuItem4.setVisible(false);
        s=status;
        if(s.equals("signin"))
        {
@@ -56,18 +74,21 @@ public class MDIframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane1 = new javax.swing.JOptionPane();
         dp1 = new javax.swing.JDesktopPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
@@ -127,41 +148,44 @@ public class MDIframe extends javax.swing.JFrame {
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
-
-        openMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-home-24.png"))); // NOI18N
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Search property");
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(openMenuItem);
         fileMenu.add(jSeparator2);
-
-        saveMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-sign-in-form-password-32.png"))); // NOI18N
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Sign in");
-        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        saveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-add-user-male-24.png"))); // NOI18N
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Sign up");
-        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAsMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(saveAsMenuItem);
         fileMenu.add(jSeparator1);
+
+        jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem5.setText("Add New Property");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem5);
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem1.setText("Update Property");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem1);
+
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem2.setText("Delete property");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem2);
+
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem3.setText("Edit profile");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem3);
 
         exitMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-back-arrow-24.png"))); // NOI18N
@@ -173,6 +197,15 @@ public class MDIframe extends javax.swing.JFrame {
             }
         });
         fileMenu.add(exitMenuItem);
+
+        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem4.setText("Sign out");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem4);
 
         menuBar.add(fileMenu);
 
@@ -250,34 +283,69 @@ public class MDIframe extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-      search_pro sp = new search_pro();
-     
-      dp1.add(sp);
-      sp.setVisible(true);
+        edit_profile ep = new edit_profile();
+        dp1.add(ep);
+        ep.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:\
+           update_property_selection ups = new update_property_selection();
+    
+      dp1.add(ups);
+      ups.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+          // TODO add your handling code here:
+          int showConfirmDialog = JOptionPane.showConfirmDialog(null,"Are You sure want to delete this property","Delete",JOptionPane.YES_NO_OPTION);
+//           delete_property dp = new delete_property();h
+             if( showConfirmDialog==0)
+             {
+                  try{
+          System.out.println("2");
+          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+          System.out.println("3"); 
+          Connection c;
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+          System.out.println("4");
+          Statement stmt = c.createStatement();
+          System.out.println("5");
+          stmt.executeUpdate("delete from  property_master where property_id="+id);
+          stmt.executeQuery("commit");
+           System.out.println("Property Delete Successfully");
        
         
+       
+    }   catch (SQLException ex) {
+            Logger.getLogger(owner_page.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             }
+             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+              model.setRowCount(0);
              
-    }//GEN-LAST:event_openMenuItemActionPerformed
+             show_property();
+           
+//    
+//      dp1.add(dp);
+//      dp.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-      owner_login ol=new owner_login();
-     
-      dp1.add(ol);
-      ol.setVisible(true);
-       
-    }//GEN-LAST:event_saveMenuItemActionPerformed
+         add_property ap=new add_property();
+        dp1.add(ap);
+        ap.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-      owner_signup os = new owner_signup();
-    
-      dp1.add(os);
-      os.setVisible(true);
-       
-    }//GEN-LAST:event_saveAsMenuItemActionPerformed
+        this.setVisible(false);
+        starting_frame sf =new starting_frame();
+        sf.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,18 +361,21 @@ public class MDIframe extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane dp1;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
+    public static javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    public static javax.swing.JMenuItem jMenuItem1;
+    public static javax.swing.JMenuItem jMenuItem2;
+    public static javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    public static javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -258,6 +258,7 @@ public  class starting_frame extends javax.swing.JFrame {
           ResultSet rs = stmt.executeQuery("select  owner_id, email, password from owner where email='"+email+"'and password='"+pass+"'");
           rs.next();
           System.out.print(owner_id);
+          
           owner_email=rs.getString("email");
           owner_pass=rs.getString("password");
           System.out.print("Owner_id  "+owner_id);
