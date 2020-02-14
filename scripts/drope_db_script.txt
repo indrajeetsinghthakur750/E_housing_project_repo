@@ -1,0 +1,56 @@
+drop table property_master;
+drop table owner;
+
+drop table image_master;
+drop table customer;
+drop table locality_master;
+
+drop sequence owner_sqnc;
+drop sequence property_sqnc;
+drop sequence customer_sqnc;
+drop sequence locality_sqnc;
+drop sequence image_sqnc;
+
+drop trigger owner_trgr;
+drop trigger property_trgr;
+drop trigger locality_trgr;
+drop trigger customer_trgr;
+drop trigger image_trgr;
+drop table property_master;
+drop table owner;
+
+drop table image_master;
+drop table customer;
+drop table locality_master;
+
+drop sequence owner_sqnc;
+drop sequence property_sqnc;
+drop sequence customer_sqnc;
+drop sequence locality_sqnc;
+drop sequence image_sqnc;
+
+drop trigger owner_trgr;
+drop trigger property_trgr;
+drop trigger locality_trgr;
+drop trigger customer_trgr;
+drop trigger image_trgr;
+
+drop table property_master;
+drop table owner;
+
+drop table image_master;
+drop table customer;
+drop table locality_master;
+
+drop sequence owner_sqnc;
+drop sequence property_sqnc;
+drop sequence customer_sqnc;
+drop sequence locality_sqnc;
+drop sequence image_sqnc;
+
+drop trigger owner_trgr;
+drop trigger property_trgr;
+drop trigger locality_trgr;
+drop trigger customer_trgr;
+drop trigger image_trgr;
+

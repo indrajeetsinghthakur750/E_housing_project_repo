@@ -1,0 +1,144 @@
+create table owner (
+owner_id numeric(4),
+owner_name varchar(30),
+email varchar(30),
+phone varchar(10),
+password varchar(20),
+adhar varchar(14),
+status varchar(20),
+profile_image blob,
+adhar_image blob,
+constraint owner_pk primary key (owner_id));
+
+
+create sequence owner_sqnc;
+
+
+CREATE TRIGGER owner_trgr
+BEFORE INSERT ON owner
+FOR EACH ROW
+BEGIN
+  SELECT owner_sqnc.nextval
+  INTO :new.owner_id
+  FROM dual;
+END;
+/
+
+
+create table locality_master
+(
+locality_id numeric(4),
+location_name varchar(30),
+city varchar(30),
+bus_stand numeric(4),
+railway_station numeric(4),
+city_hospital numeric(4),
+constraint locality_pk primary key (locality_id)
+);
+
+
+create sequence locality_sqnc;
+
+
+
+CREATE TRIGGER locality_trgr
+BEFORE INSERT ON locality_master
+FOR EACH ROW
+BEGIN
+  SELECT locality_sqnc.nextval
+  INTO :new.locality_id
+  FROM dual;
+END;
+/
+
+
+create table property_master 
+(property_id numeric(4),
+owner_id numeric(4),
+type varchar(20),
+rent numeric(6),
+posted_date date,
+area numeric(5),
+floor numeric(2),
+water varchar(30),
+electricity varchar(30),
+facing varchar(10),
+preferred varchar(50),
+furshing varchar(30),
+amenties varchar(100),
+balcony varchar(10),
+available varchar(10),
+city varchar(20),
+pincode varchar(6),
+landmark varchar(50),
+colony varchar(30),
+locality_id numeric(4),
+constraint property_pk primary key (property_id),
+constraint ownerid_fk foreign key(owner_id) References owner (owner_id),
+constraint localityid_fk foreign key(locality_id) References locality_master(locality_id)  );
+
+
+create sequence property_sqnc;
+
+
+CREATE TRIGGER property_trgr
+BEFORE INSERT ON property_master
+FOR EACH ROW
+BEGIN
+  SELECT property_sqnc.nextval
+  INTO :new.property_id
+  FROM dual;
+END;
+/
+
+
+
+
+
+
+create table customer 
+(
+customer_id numeric(4),
+customer_name varchar(50),
+email varchar(100),
+phone varchar(10),
+status varchar(20),
+constraint customer_pk primary key (customer_id));
+
+create sequence customer_sqnc;
+
+
+CREATE TRIGGER customer_trgr
+BEFORE INSERT ON customer
+FOR EACH ROW
+BEGIN
+  SELECT customer_sqnc.nextval
+  INTO :new.customer_id
+  FROM dual;
+END;
+/
+
+
+
+
+create table image_master(
+image_id numeric(4),
+property_id numeric(4),
+image blob,
+constraint image_pk primary key (image_id),
+constraint property_fk foreign key(property_id) references property_master (property_id)
+);
+
+
+create sequence image_sqnc;
+
+
+CREATE TRIGGER image_trgr
+BEFORE INSERT ON image_master
+FOR EACH ROW
+BEGIN
+  SELECT image_sqnc.nextval
+  INTO :new.image_id
+  FROM dual;
+END;
+/
