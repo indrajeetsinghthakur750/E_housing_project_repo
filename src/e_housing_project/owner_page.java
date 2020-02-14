@@ -4,13 +4,28 @@
  * and open the template in the editor.
  */
 package e_housing_project;
-import static e_housing_project.MDIframe.dp1;
-import static e_housing_project.MDIframe.saveMenuItem;
 
+import static e_housing_project.MDIframe.jMenuItem1;
+
+import static e_housing_project.starting_frame.owner_id;
+
+import static e_housing_project.MDIframe.jMenuItem2;
+import static e_housing_project.MDIframe.jMenuItem3;
+import static e_housing_project.MDIframe.jMenuItem4;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import javax.swing.JMenuItem;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
+import static oracle.net.aso.C12.e;
 
 /**
  *
@@ -18,6 +33,10 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class owner_page extends javax.swing.JInternalFrame {
 
+    
+      public static Object id;
+     
+        
     /**
      * Creates new form owner_page
      */
@@ -28,11 +47,13 @@ public class owner_page extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
-        JMenuItem saveMenuItem1 = saveMenuItem;
-        saveMenuItem1.setVisible(false);
-       
+        
+         show_property();
+        jMenuItem1.setVisible(true);
+        jMenuItem2.setVisible(true);
+        jMenuItem3.setVisible(true);
+        jMenuItem4.setVisible(true);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,15 +63,12 @@ public class owner_page extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPane1 = new javax.swing.JOptionPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setClosable(true);
         setMaximizable(true);
@@ -73,20 +91,18 @@ public class owner_page extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jButton1.setText("Add Property");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jTable1.setDropMode(javax.swing.DropMode.ON_OR_INSERT_ROWS);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
-
-        jButton2.setText("Update Property");
-
-        jButton3.setText("Delete Property");
-
-        jButton4.setText("Edit Profile");
+        jTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jTable1PropertyChange(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,16 +123,6 @@ public class owner_page extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jButton2)
-                .addGap(35, 35, 35)
-                .addComponent(jButton3)
-                .addGap(37, 37, 37)
-                .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,14 +131,8 @@ public class owner_page extends javax.swing.JInternalFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
                 .addGap(47, 47, 47))
         );
 
@@ -150,24 +150,56 @@ public class owner_page extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        add_property ap=new add_property();
-        dp1.add(ap);
-        ap.setVisible(true);
+        jTable1 = null;
+        show_property();
+        int i=jTable1.getSelectedRowCount();
+        System.out.println(i);
+         id= jTable1.getValueAt(i, 0);
+        System.out.print(id);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+               
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1PropertyChange
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+   public static void show_property() {
+        try{
+           jTable1.repaint();
+          System.out.println("2");
+          
+          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+          System.out.println("3"); 
+          Connection c;
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+          System.out.println("4");
+          Statement stmt = c.createStatement();
+          System.out.println("5");
+          
+          ResultSet rs=null;
+            rs = stmt.executeQuery("select  * from  property_master where owner_id="+owner_id+"");
+        
+          
+          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+          System.out.println("ddd");
+       
+        
+       
+    }   catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+    }
 }
