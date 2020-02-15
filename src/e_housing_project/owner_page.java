@@ -12,6 +12,7 @@ import static e_housing_project.starting_frame.owner_id;
 import static e_housing_project.MDIframe.jMenuItem2;
 import static e_housing_project.MDIframe.jMenuItem3;
 import static e_housing_project.MDIframe.jMenuItem4;
+import static e_housing_project.MDIframe.jMenuItem5;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -19,13 +20,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
-import static oracle.net.aso.C12.e;
 
 /**
  *
@@ -33,8 +30,10 @@ import static oracle.net.aso.C12.e;
  */
 public class owner_page extends javax.swing.JInternalFrame {
 
-    
-      public static Object id;
+    /**
+     *
+     */
+    public static Object id;
      
         
     /**
@@ -48,11 +47,13 @@ public class owner_page extends javax.swing.JInternalFrame {
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
         
-         show_property();
+        show_property();
+        
         jMenuItem1.setVisible(true);
         jMenuItem2.setVisible(true);
         jMenuItem3.setVisible(true);
         jMenuItem4.setVisible(true);
+        jMenuItem5.setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,10 +92,13 @@ public class owner_page extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setDropMode(javax.swing.DropMode.ON_OR_INSERT_ROWS);
+        jTable1.setDropMode(javax.swing.DropMode.ON);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable1MousePressed(evt);
             }
         });
         jTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -119,9 +123,7 @@ public class owner_page extends javax.swing.JInternalFrame {
                                 .addGap(155, 155, 155)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 173, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,9 +133,9 @@ public class owner_page extends javax.swing.JInternalFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                .addGap(47, 47, 47))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,19 +154,22 @@ public class owner_page extends javax.swing.JInternalFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        jTable1 = null;
-        show_property();
-        int i=jTable1.getSelectedRowCount();
-        System.out.println(i);
-         id= jTable1.getValueAt(i, 0);
+       int row= jTable1.getSelectedRow();
+        id = jTable1.getValueAt(row, 0);
         System.out.print(id);
-        
+       
                
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
         // TODO add your handling code here:
+      
     }//GEN-LAST:event_jTable1PropertyChange
+
+    private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
+        // TODO add your handling code here:
+           
+    }//GEN-LAST:event_jTable1MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -178,27 +183,14 @@ public class owner_page extends javax.swing.JInternalFrame {
 
    public static void show_property() {
         try{
-           jTable1.repaint();
-          System.out.println("2");
-          
-          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-          System.out.println("3"); 
+          DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
           Connection c;
-          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-          System.out.println("4");
-          Statement stmt = c.createStatement();
-          System.out.println("5");
-          
-          ResultSet rs=null;
-            rs = stmt.executeQuery("select  * from  property_master where owner_id="+owner_id+"");
-        
-          
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); Statement stmt = c.createStatement();
+          ResultSet rs;
+          rs = stmt.executeQuery("select  * from  property_master where owner_id="+owner_id+"");
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-          System.out.println("ddd");
-       
-        
-       
-    }   catch (SQLException ex) {
+   
+    }   catch (SQLException e) {
              JOptionPane.showMessageDialog(null,"Error"+e);
         }
     }

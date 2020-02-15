@@ -10,17 +10,14 @@ import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.owner_page.id;
 import static e_housing_project.owner_page.jTable1;
 import static e_housing_project.owner_page.show_property;
-import static e_housing_project.starting_frame.owner_id;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -41,6 +38,7 @@ public class MDIframe extends javax.swing.JFrame {
         jMenuItem2.setVisible(false);
         jMenuItem3.setVisible(false);
         jMenuItem4.setVisible(false);
+        jMenuItem5.setVisible(false);
        s=status;
        if(s.equals("signin"))
        {
@@ -60,7 +58,8 @@ public class MDIframe extends javax.swing.JFrame {
            dp1.add(sp);
            sp.setVisible(true);
        }
-     
+
+      
     }
     
      
@@ -292,7 +291,7 @@ public class MDIframe extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:\
-           update_property_selection ups = new update_property_selection();
+           update_property ups = new update_property();
     
       dp1.add(ups);
       ups.setVisible(true);
@@ -300,7 +299,8 @@ public class MDIframe extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
           // TODO add your handling code here:
-          int showConfirmDialog = JOptionPane.showConfirmDialog(null,"Are You sure want to delete this property","Delete",JOptionPane.YES_NO_OPTION);
+          int showConfirmDialog;
+          showConfirmDialog = JOptionPane.showConfirmDialog(null,"Are You sure want to delete this property","Delete",JOptionPane.YES_NO_OPTION);
 //           delete_property dp = new delete_property();h
              if( showConfirmDialog==0)
              {
@@ -314,19 +314,18 @@ public class MDIframe extends javax.swing.JFrame {
           Statement stmt = c.createStatement();
           System.out.println("5");
           stmt.executeUpdate("delete from  property_master where property_id="+id);
-          stmt.executeQuery("commit");
+          
            System.out.println("Property Delete Successfully");
-       
+           show_property();
         
        
     }   catch (SQLException ex) {
             Logger.getLogger(owner_page.class.getName()).log(Level.SEVERE, null, ex);
         }
              }
-             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-              model.setRowCount(0);
+          
              
-             show_property();
+             
            
 //    
 //      dp1.add(dp);
@@ -370,7 +369,7 @@ public class MDIframe extends javax.swing.JFrame {
     public static javax.swing.JMenuItem jMenuItem2;
     public static javax.swing.JMenuItem jMenuItem3;
     public static javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    public static javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;

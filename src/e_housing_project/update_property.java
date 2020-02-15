@@ -1,8 +1,14 @@
 package e_housing_project;
 
-import static e_housing_project.owner_page.show_property;
+import static e_housing_project.owner_page.id;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ComboBoxModel;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /*
@@ -27,7 +33,7 @@ public class update_property extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
-        show_property();
+       set_property(id);
     }
 
     /**
@@ -39,6 +45,8 @@ public class update_property extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -69,7 +77,6 @@ public class update_property extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,6 +96,9 @@ public class update_property extends javax.swing.JInternalFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
+
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -116,8 +126,10 @@ public class update_property extends javax.swing.JInternalFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Balcony");
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Yes");
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
 
         jCheckBox1.setText("Lift");
@@ -140,14 +152,21 @@ public class update_property extends javax.swing.JInternalFrame {
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combine in rent", "Separate" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ground", "Basement", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jComboBox7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combine in rent", "Separate" }));
 
         jCheckBox4.setText("Air-conditioned");
 
+        buttonGroup2.add(jRadioButton3);
         jRadioButton3.setText("No");
 
+        buttonGroup2.add(jRadioButton4);
         jRadioButton4.setText("Yes");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -159,8 +178,6 @@ public class update_property extends javax.swing.JInternalFrame {
         jCheckBox7.setText("Family");
 
         jCheckBox8.setText("Bachlor");
-
-        jCheckBox9.setText("both");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -182,14 +199,15 @@ public class update_property extends javax.swing.JInternalFrame {
                             .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(62, 62, 62))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -219,9 +237,7 @@ public class update_property extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox9))
+                                .addComponent(jCheckBox8))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
@@ -238,7 +254,7 @@ public class update_property extends javax.swing.JInternalFrame {
                                         .addComponent(jCheckBox5)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBox4)))))))
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,8 +307,7 @@ public class update_property extends javax.swing.JInternalFrame {
                     .addComponent(jLabel19)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jCheckBox7)
-                        .addComponent(jCheckBox8)
-                        .addComponent(jCheckBox9)))
+                        .addComponent(jCheckBox8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -300,6 +315,8 @@ public class update_property extends javax.swing.JInternalFrame {
                     .addComponent(jRadioButton3))
                 .addContainerGap())
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -352,38 +369,23 @@ public class update_property extends javax.swing.JInternalFrame {
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 280, -1));
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 280, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(443, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(384, 384, 384)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(33, 33, 33)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(34, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 368, 382));
+
+        jButton1.setText("Update Propety");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 420, 80));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -392,7 +394,6 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -435,4 +436,118 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    private void set_property(Object id1) {
+       try{
+           System.out.print("HI");
+            DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
+          Connection c;
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
+          
+          Statement stmt = c.createStatement();
+          ResultSet rs;
+           System.out.print("HI"+id1);
+          rs = stmt.executeQuery("select  * from  property_master where property_id="+id1);
+         rs.next();
+          String area =rs.getString("area");
+          System.out.print("hello"+area);
+          jTextField1.setText(area);
+          
+           String rent = rs.getString("rent");
+          System.out.print("hello"+rent);
+          jTextField2.setText(rent);
+          
+          String city = rs.getString("city");
+          System.out.print("hello"+city);
+          jTextField3.setText(city);
+          
+          String pincode = rs.getString("pincode");
+          System.out.print("hello"+pincode);
+          jTextField4.setText(pincode);
+          
+          String landmark = rs.getString("landmark");
+          System.out.print("hello"+landmark);
+          jTextField5.setText(landmark);
+          
+          String colony = rs.getString("colony");
+          System.out.print("hello"+colony);
+          jTextField6.setText(colony);
+          
+          String type = rs.getString("type");
+          System.out.print("hello"+type);
+           ComboBoxModel<String> m = jComboBox1.getModel();
+          m.setSelectedItem(type);
+          
+          int floor = rs.getInt("floor");
+          System.out.print("hello"+floor);
+            jComboBox2.setSelectedIndex(floor);
+           
+          
+          String facing = rs.getString("facing");
+          System.out.print("hello"+facing);
+          ComboBoxModel<String> m1 = jComboBox3.getModel();
+          m1.setSelectedItem(facing);
+          
+          String furnishing = rs.getString("furshing");
+          System.out.print("hello"+furnishing);
+          ComboBoxModel<String> m2 = jComboBox4.getModel();
+          m2.setSelectedItem(furnishing);
+          
+          
+          String water = rs.getString("water");
+          System.out.print("hello"+water);
+          ComboBoxModel<String> m3 = jComboBox7.getModel();
+          m3.setSelectedItem(water);
+          
+         
+          String electricity = rs.getString("electricity");
+          System.out.print("hello"+electricity);
+          ComboBoxModel<String> m4 = jComboBox5.getModel();
+          m4.setSelectedItem(electricity);
+          
+          
+          String balcony = rs.getString("balcony");
+          System.out.print("hello"+balcony);
+           if(balcony.equals("Yes"))
+              jRadioButton1.setSelected(true);
+          else
+              jRadioButton2.setSelected(true);
+           
+           
+          String amenties = rs.getString("amenties");
+          System.out.print("hello"+amenties);
+          if(amenties.contains("Lift"))
+              jCheckBox1.setSelected(true);
+           if(amenties.contains("Garden"))
+              jCheckBox2.setSelected(true);
+            if(amenties.contains("Parking"))
+              jCheckBox3.setSelected(true);
+             if(amenties.contains("Wi-fi"))
+              jCheckBox6.setSelected(true);
+              if(amenties.contains("Water"))
+              jCheckBox5.setSelected(true);
+               if(amenties.contains("Air-conditioned"))
+              jCheckBox4.setSelected(true);
+          
+          String preferred = rs.getString("preferred");
+          System.out.print("hello"+preferred);
+           if(preferred.contains("Family"))
+              jCheckBox7.setSelected(true);
+            if(preferred.contains("Bachlor"))
+              jCheckBox8.setSelected(true);
+          
+          String available = rs.getString("available");
+          System.out.print("hello"+available);
+           if(balcony.equals("Yes"))
+              jRadioButton4.setSelected(true);
+          else
+              jRadioButton3.setSelected(true);
+          
+          
+       }
+       catch(SQLException e)
+       {
+           
+       }
+    }
 }
