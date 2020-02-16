@@ -281,26 +281,56 @@ public class search_pro extends javax.swing.JInternalFrame {
 
         buttonGroup3.add(jRadioButton12);
         jRadioButton12.setText("1k - 2k");
+        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton12ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
         buttonGroup3.add(jRadioButton13);
         jRadioButton13.setText("2k - 3k");
+        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton13ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         buttonGroup3.add(jRadioButton14);
         jRadioButton14.setText("10k +");
+        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton14ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         buttonGroup3.add(jRadioButton15);
         jRadioButton15.setText("5k - 10k");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
         buttonGroup3.add(jRadioButton16);
         jRadioButton16.setText("3k - 4k");
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
 
         buttonGroup3.add(jRadioButton17);
         jRadioButton17.setText("4k - 5k");
+        jRadioButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton17ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
 
         buttonGroup4.add(jRadioButton18);
@@ -550,6 +580,36 @@ public class search_pro extends javax.swing.JInternalFrame {
         property_search_filter();
     }//GEN-LAST:event_jRadioButton11ActionPerformed
 
+    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+        // TODO add your handling code here:
+        property_search_filter();
+    }//GEN-LAST:event_jRadioButton12ActionPerformed
+
+    private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
+        // TODO add your handling code here:
+         property_search_filter();
+    }//GEN-LAST:event_jRadioButton13ActionPerformed
+
+    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
+        // TODO add your handling code here:
+         property_search_filter();
+    }//GEN-LAST:event_jRadioButton16ActionPerformed
+
+    private void jRadioButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton17ActionPerformed
+        // TODO add your handling code here:
+         property_search_filter();
+    }//GEN-LAST:event_jRadioButton17ActionPerformed
+
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+        // TODO add your handling code here:
+         property_search_filter();
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
+    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+        // TODO add your handling code here:
+         property_search_filter();
+    }//GEN-LAST:event_jRadioButton14ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -707,15 +767,15 @@ public class search_pro extends javax.swing.JInternalFrame {
             if(jRadioButton12.isSelected())
                filter = filter.concat(" rent>= 1000 and rent <=2000 and");
             if(jRadioButton13.isSelected())
-               filter = filter.concat(" floor = 1 and");  
+               filter = filter.concat(" rent > 2000 and rent <=3000  and");  
             if(jRadioButton16.isSelected())
-               filter = filter.concat(" floor = 2 and"); 
+               filter = filter.concat(" rent > 3000 and rent <= 4000 and"); 
             if(jRadioButton17.isSelected())
-               filter = filter.concat(" floor = 3 and"); 
-            if(jRadioButton14.isSelected())
-               filter = filter.concat(" floor = 4 and");
+               filter = filter.concat(" rent > 4000 and rent <= 5000 and"); 
             if(jRadioButton15.isSelected())
-               filter = filter.concat(" floor = 5 and"); 
+               filter = filter.concat(" rent > 5000 and rent <= 10000 and");
+            if(jRadioButton14.isSelected())
+               filter = filter.concat(" rent > 10000 and"); 
 //           
             
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<          
