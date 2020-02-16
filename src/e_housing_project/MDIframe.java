@@ -39,6 +39,7 @@ public class MDIframe extends javax.swing.JFrame {
         jMenuItem3.setVisible(false);
         jMenuItem4.setVisible(false);
         jMenuItem5.setVisible(false);
+        jMenuItem6.setVisible(false);
        s=status;
        if(s.equals("signin"))
        {
@@ -88,6 +89,7 @@ public class MDIframe extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
@@ -205,6 +207,15 @@ public class MDIframe extends javax.swing.JFrame {
             }
         });
         fileMenu.add(jMenuItem4);
+
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem6.setText("Back");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem6);
 
         menuBar.add(fileMenu);
 
@@ -346,6 +357,14 @@ public class MDIframe extends javax.swing.JFrame {
         sf.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+         this.setVisible(false);
+        starting_frame sf =new starting_frame();
+        sf.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -370,6 +389,7 @@ public class MDIframe extends javax.swing.JFrame {
     public static javax.swing.JMenuItem jMenuItem3;
     public static javax.swing.JMenuItem jMenuItem4;
     public static javax.swing.JMenuItem jMenuItem5;
+    public static javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
