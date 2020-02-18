@@ -26,7 +26,9 @@ import net.proteanit.sql.DbUtils;
  * @author Indrajeet singh
  */
 public class search_pro extends javax.swing.JInternalFrame {
-
+Connection c;
+Statement stmt;
+ ResultSet rs,rs2;
     /**
      * Creates new form search_pro
      */
@@ -37,8 +39,21 @@ public class search_pro extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
-        property_search_filter();
+      
         jMenuItem6.setVisible(true);
+        try{
+            DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
+          
+          System.out.println("113");
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
+          System.out.println("114");
+         stmt = c.createStatement();
+        }
+        catch(SQLException e)
+        {
+             JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+          property_search_filter();
     }
 
     /**
@@ -107,7 +122,6 @@ public class search_pro extends javax.swing.JInternalFrame {
         jRadioButton27 = new javax.swing.JRadioButton();
         jRadioButton28 = new javax.swing.JRadioButton();
         jRadioButton29 = new javax.swing.JRadioButton();
-        jRadioButton30 = new javax.swing.JRadioButton();
         jRadioButton31 = new javax.swing.JRadioButton();
         jRadioButton32 = new javax.swing.JRadioButton();
         jRadioButton33 = new javax.swing.JRadioButton();
@@ -396,7 +410,6 @@ public class search_pro extends javax.swing.JInternalFrame {
         });
         jPanel2.add(jRadioButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
 
-        buttonGroup5.add(jRadioButton26);
         jRadioButton26.setText("Unfurnished");
         jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,7 +418,6 @@ public class search_pro extends javax.swing.JInternalFrame {
         });
         jPanel2.add(jRadioButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
-        buttonGroup5.add(jRadioButton27);
         jRadioButton27.setText("Semi-furnished");
         jRadioButton27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,7 +426,6 @@ public class search_pro extends javax.swing.JInternalFrame {
         });
         jPanel2.add(jRadioButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
-        buttonGroup5.add(jRadioButton28);
         jRadioButton28.setText("Furnished");
         jRadioButton28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -431,15 +442,6 @@ public class search_pro extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(jRadioButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
-
-        buttonGroup6.add(jRadioButton30);
-        jRadioButton30.setText("Both");
-        jRadioButton30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton30ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jRadioButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         buttonGroup6.add(jRadioButton31);
         jRadioButton31.setText("Bachlors");
@@ -632,6 +634,11 @@ public class search_pro extends javax.swing.JInternalFrame {
         jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 230, 10));
 
         jButton1.setText("View details");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 630, 300, 60));
 
         jButton2.setText("Book");
@@ -856,11 +863,6 @@ public class search_pro extends javax.swing.JInternalFrame {
         property_search_filter();
     }//GEN-LAST:event_jRadioButton31ActionPerformed
 
-    private void jRadioButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton30ActionPerformed
-        // TODO add your handling code here:
-        property_search_filter();
-    }//GEN-LAST:event_jRadioButton30ActionPerformed
-
     private void jRadioButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton29ActionPerformed
         // TODO add your handling code here:
         property_search_filter();
@@ -928,13 +930,22 @@ public class search_pro extends javax.swing.JInternalFrame {
 
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
         // TODO add your handlingcode here:
-        property_search_filter();
+//        property_search_filter();
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
         // TODO add your handling code here:
-        property_search_filter();
+//        property_search_filter();
     }//GEN-LAST:event_jComboBox2ItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(jTable1.getSelectedRow()!=-1)
+        {
+           int row jTable1.getSelectedRow();
+           pid=jTable1.getValueAt(row, )
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -995,7 +1006,6 @@ public class search_pro extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jRadioButton28;
     private javax.swing.JRadioButton jRadioButton29;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton30;
     private javax.swing.JRadioButton jRadioButton31;
     private javax.swing.JRadioButton jRadioButton32;
     private javax.swing.JRadioButton jRadioButton33;
@@ -1132,7 +1142,124 @@ public class search_pro extends javax.swing.JInternalFrame {
             
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<          
             
+ if(jRadioButton28.isSelected() || jRadioButton27.isSelected() || jRadioButton26.isSelected() )
+          {
+//             filter= filter.concat(" type =");
+          if(jRadioButton28.isSelected())
+               filter = filter.concat(" furshing = 'Furnished' or");
+          if(jRadioButton27.isSelected())
+               filter = filter.concat(" furshing = 'Semi-furnished' or");  
+          if(jRadioButton26.isSelected())
+               filter = filter.concat(" furshing = 'Unfurnished' or"); 
+         
             
+          if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+          }
+
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ if(jRadioButton40.isSelected() || jRadioButton41.isSelected() || jRadioButton44.isSelected() || jRadioButton42.isSelected() || jRadioButton43.isSelected() || jRadioButton39.isSelected() )
+          {
+//             filter= filter.concat(" type =");
+          if(jRadioButton40.isSelected())
+               filter = filter.concat(" area >0 and area <= 25 or");
+          if(jRadioButton41.isSelected())
+               filter = filter.concat(" area >25 and area <= 50 or");  
+          if(jRadioButton44.isSelected())
+               filter = filter.concat(" area > 50 and area <= 75 or"); 
+          if(jRadioButton42.isSelected())
+               filter = filter.concat(" area > 75 and area <= 100 or"); 
+          if(jRadioButton43.isSelected())
+               filter = filter.concat(" area > 100 and area <= 150 or"); 
+          if(jRadioButton39.isSelected())
+               filter = filter.concat(" area >150  or");
+       
+            
+          if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+          }  
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+  if(jRadioButton32.isSelected() || jRadioButton31.isSelected()  )
+          {
+//             filter= filter.concat(" type =");
+          if(jRadioButton32.isSelected())
+               filter = filter.concat(" preferred = 'Family' or");
+          if(jRadioButton31.isSelected())
+               filter = filter.concat(" preferred = 'Bachlor' or");  
+        
+       
+            
+          if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+          }  
+  
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+  
+  
+   if(jRadioButton29.isSelected() || jRadioButton33.isSelected()  )
+          {
+//             filter= filter.concat(" type =");
+          if(jRadioButton29.isSelected())
+               filter = filter.concat(" balcony = 'Yes' or");
+          if(jRadioButton33.isSelected())
+               filter = filter.concat(" balcony = 'No' or");  
+        
+       
+            
+          if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+          }  
+  
+  ////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\
+  
+//  if(jCheckBox6.isSelected() || jCheckBox5.isSelected() || jCheckBox4.isSelected() || jCheckBox1.isSelected() || jCheckBox3.isSelected() || jCheckBox2.isSelected()  )
+//          {
+////             filter= filter.concat(" type =");
+//          if(jCheckBox6.isSelected())
+//               filter = filter.concat(" amenties = 'Yes' or");
+//          if(jCheckBox5.isSelected())
+//               filter = filter.concat(" balcony = 'Yes' or");
+//          if(jCheckBox4.isSelected())
+//               filter = filter.concat(" balcony = 'Yes' or");
+//          if(jCheckBox1.isSelected())
+//               filter = filter.concat(" balcony = 'Yes' or");
+//          if(jCheckBox3.isSelected())
+//               filter = filter.concat(" balcony = 'Yes' or");
+//          if(jCheckBox2.isSelected())
+//               filter = filter.concat(" balcony = 'Yes' or");
+//               
+//          
+//         
+//        
+//       
+//            
+//          if(filter.endsWith("or"))
+//                  {
+//                      int index = filter.lastIndexOf("or");
+//                      filter = filter.substring(0, index);
+//                      filter=filter.concat(" and");
+//                  }
+//          }  
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           if(filter.endsWith("where"))
                   {
                       int index = filter.lastIndexOf("where");
@@ -1145,17 +1272,12 @@ public class search_pro extends javax.swing.JInternalFrame {
          }
           System.out.println(filter);
            System.out.println("121");
-          DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
-          Connection c;
-          System.out.println("113");
-          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
-          System.out.println("114");
-          Statement stmt = c.createStatement();
+          
           System.out.println("151");
           
-          ResultSet rs;
+         
           System.out.println("17");
-           ResultSet rs2;
+           
            System.out.println("19");
           rs = stmt.executeQuery(filter);
          
@@ -1170,6 +1292,7 @@ public class search_pro extends javax.swing.JInternalFrame {
        
                     }
            jLabel2.setText((count+""));
+//           c.close();
         }
         catch(SQLException e)
         {
