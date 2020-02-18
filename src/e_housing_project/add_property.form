@@ -291,10 +291,7 @@
                               <Component id="jComboBox3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="241" pref="241" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox7" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
                               <Component id="jComboBox5" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">

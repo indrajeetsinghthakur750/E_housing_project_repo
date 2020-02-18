@@ -269,10 +269,10 @@ public class owner_signup extends javax.swing.JInternalFrame {
       
         Statement stmt; 
         try{
-              BufferedImage bimage= ImageIO.read(this.sf);
-        WritableImage img = null;
-            img = SwingFXUtils.toFXImage(bimage, img);
-        String sql = "insert into owner(owner_name,email,phone,password,adhar,adhar_image,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+img+"','"+status+"')";
+//              BufferedImage bimage= ImageIO.read(this.sf);
+//        WritableImage img = null;
+//            img = SwingFXUtils.toFXImage(bimage, img);
+        String sql = "insert into owner(owner_name,email,phone,password,adhar,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+status+"')";
         System.out.println("2");
         DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
         System.out.println("3"); 
@@ -286,9 +286,7 @@ public class owner_signup extends javax.swing.JInternalFrame {
         }
         catch(SQLException e)
         {
-        } catch (IOException ex) {
-           Logger.getLogger(owner_signup.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed

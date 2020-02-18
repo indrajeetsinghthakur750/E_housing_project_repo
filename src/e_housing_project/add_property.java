@@ -422,7 +422,7 @@ public class add_property extends javax.swing.JInternalFrame {
         int floor;
         floor = jComboBox2.getSelectedIndex();
         System.out.print(floor);
-        int locality_id=20;
+        int locality_id=1;
         System.out.print(locality_id);
         String water= jComboBox7.getSelectedItem().toString();
         System.out.print(water);
