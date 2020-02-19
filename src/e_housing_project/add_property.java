@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -27,16 +28,21 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class add_property extends javax.swing.JInternalFrame {
 
     
+   
     /**
      * Creates new form add_property
      */
     public add_property() {
         initComponents();
-            this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
         BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
+          jComboBox6.removeAllItems();
+          
+           load();
+        
     }
 
     /**
@@ -62,7 +68,6 @@ public class add_property extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
@@ -72,6 +77,9 @@ public class add_property extends javax.swing.JInternalFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox8 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -119,7 +127,7 @@ public class add_property extends javax.swing.JInternalFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Pincode");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Rent ");
@@ -127,11 +135,11 @@ public class add_property extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Landmark");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Colony");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         jTextField1.setBorder(null);
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 280, -1));
@@ -139,23 +147,34 @@ public class add_property extends javax.swing.JInternalFrame {
         jTextField2.setBorder(null);
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 280, -1));
 
-        jTextField3.setBorder(null);
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, -1));
-
         jTextField4.setBorder(null);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 280, -1));
 
         jTextField5.setBorder(null);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 280, -1));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 280, -1));
 
         jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 280, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 280, -1));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 280, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 280, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 280, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, -1));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 280, -1));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 280, -1));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 280, -1));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 280, -1));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 280, -1));
+
+        jComboBox6.setBorder(null);
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 260, -1));
+
+        jLabel7.setText("Location");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 260, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -260,9 +279,7 @@ public class add_property extends javax.swing.JInternalFrame {
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(241, 241, 241))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -413,7 +430,7 @@ public class add_property extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String type = jComboBox1.getSelectedItem().toString();
-        
+         int locality_id=0;
         int rent =Integer.parseInt(jTextField2.getText());
         System.out.print(rent);
 //        String posted_date =jTextField4.getText().toString();
@@ -422,8 +439,31 @@ public class add_property extends javax.swing.JInternalFrame {
         int floor;
         floor = jComboBox2.getSelectedIndex();
         System.out.print(floor);
-        int locality_id=1;
-        System.out.print(locality_id);
+         String city =jComboBox6.getSelectedItem().toString();
+        System.out.print(city);
+         String location =jComboBox8.getSelectedItem().toString();
+        System.out.print(location);
+        try{
+             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           System.out.println("3"); 
+          Connection c4;
+           Statement stmt4;
+            c4 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+           System.out.println("4");
+            stmt4=c4.createStatement();
+             System.out.println("5");
+             ResultSet rs4;
+            rs4 = stmt4.executeQuery("select locality_id from locality_master where city='"+city+"' and location_name='"+location+"'");
+            rs4.next();
+      locality_id = rs4.getInt("locality_id");  
+      c4.close();
+        }
+        catch(SQLException e)
+        {
+            
+        }
+       
+//        System.out.print(locality_id);
         String water= jComboBox7.getSelectedItem().toString();
         System.out.print(water);
         String electricity = jComboBox5.getSelectedItem().toString();
@@ -472,14 +512,15 @@ public class add_property extends javax.swing.JInternalFrame {
       
         System.out.print(available);
         int id=owner_id;
-        String city =jTextField3.getText();
-        System.out.print(city);
+       
+       
         String pincode =jTextField4.getText();
         System.out.print(pincode);
         String landmark =jTextField5.getText();
         System.out.print(landmark);
         String colony =jTextField6.getText();
         System.out.print(colony);
+        
         String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
        
         Statement stmt;
@@ -493,11 +534,11 @@ public class add_property extends javax.swing.JInternalFrame {
             stmt=c.createStatement();
              System.out.println("5");
              stmt.executeUpdate(sql);            
-            
+            c.close();
            JOptionPane.showMessageDialog(null,"Successfully added the property");
-           owner_page op=new owner_page();
-           dp1.add(op);
-           op.setVisible(true);
+//           owner_page op=new owner_page();
+//           dp1.add(op);
+//           op.setVisible(true);
         }
         catch(SQLException e)
         {
@@ -507,17 +548,44 @@ public class add_property extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
-        jFileChooser1.addChoosableFileFilter(filter);
-        int result = jFileChooser1.showDialog(this, title);
-        if(result == JFileChooser.APPROVE_OPTION){
-            File sf = jFileChooser1.getSelectedFile();
-            String path = sf.getAbsolutePath();
-            jLabel17.setIcon(ResizeImage(path));
-        // TODO add your handling code here:
+//  jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
+//        jFileChooser1.addChoosableFileFilter(filter);
+//        int result = jFileChooser1.showDialog(this, title);
+//        if(result == JFileChooser.APPROVE_OPTION){
+//            File sf = jFileChooser1.getSelectedFile();
+//            String path = sf.getAbsolutePath();
+//            jLabel17.setIcon(ResizeImage(path));
+//        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-    }
+
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+        jComboBox8.removeAllItems();
+        String ct=jComboBox6.getSelectedItem().toString();
+        try{
+            
+             ResultSet rs2;
+              Statement stmt2;
+              Connection c2;
+              DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           
+            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+             stmt2=c2.createStatement();
+            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+            while(rs2.next())
+            {
+                String l = rs2.getString("location_name");
+                jComboBox8.addItem(l);
+            }
+            c2.close();
+        }
+        catch(SQLException e){
+              JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+        
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -538,7 +606,9 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -556,6 +626,7 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JOptionPane jOptionPane2;
     private javax.swing.JPanel jPanel1;
@@ -573,7 +644,6 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -586,5 +656,30 @@ public class add_property extends javax.swing.JInternalFrame {
         ImageIcon image1 = new ImageIcon(newImg);    
         return  image1;
         //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void load() {
+         try{
+              ResultSet rs;
+              Statement stmt1;
+              Connection c1;
+              DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           
+            c1 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+             stmt1=c1.createStatement();
+            rs= stmt1.executeQuery("select distinct city from locality_master ");
+    
+           
+                while(rs.next())
+                {
+                String ct = rs.getString("city");
+                jComboBox6.addItem(ct);
+                }
+               
+         }
+         catch(SQLException e)
+         {
+             JOptionPane.showMessageDialog(null,"Error"+e);
+         }
     }
 }

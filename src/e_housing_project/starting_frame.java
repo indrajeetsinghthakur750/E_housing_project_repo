@@ -1,6 +1,6 @@
 package e_housing_project;
 
-
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -71,6 +71,11 @@ public  class starting_frame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         setLocation(new java.awt.Point(400, 0));
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                enter(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,6 +91,11 @@ public  class starting_frame extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField1.setBorder(null);
         jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 320, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 317, 10));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 318, 10));
@@ -107,6 +117,11 @@ public  class starting_frame extends javax.swing.JFrame {
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPasswordField1.setBorder(null);
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
         jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 320, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -145,6 +160,14 @@ public  class starting_frame extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                sign_in(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jButton2KeyTyped(evt);
             }
         });
 
@@ -254,7 +277,9 @@ public  class starting_frame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,50 +322,7 @@ public  class starting_frame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        
-       if(jTextField1.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(this,"Email field is empty"); 
-            jTextField1.requestFocus();
-        }
-       if( jPasswordField1.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(this,"Password field is empty"); 
-            jPasswordField1.requestFocus();
-        }
-        else
-        {
-          String email = jTextField1.getText();
-          String pass = jPasswordField1.getText();
-          Statement stmt;
-      try{
-          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-          Connection c;
-          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-          stmt=c.createStatement();
-          ResultSet rs = stmt.executeQuery("select  owner_id, email, password from owner where email='"+email+"'and password='"+pass+"'");
-          rs.next();
-          System.out.print(owner_id);   
-          owner_email=rs.getString("email");
-          owner_pass=rs.getString("password");
-          if(owner_email.equals(email)&& owner_pass.equals(pass))       
-          {
-              JOptionPane.showMessageDialog(this,"Suuccessfully Login");
-              owner_id=rs.getInt("owner_id");
-              this.setVisible(false);
-             mdi = new MDIframe("signin");
-              mdi.setVisible(true);    
-          }
-         else 
-           {
-               JOptionPane.showMessageDialog(this,"Icorrect email or password");
-           }
-         }
-        catch(SQLException e)
-        {
-            JOptionPane.showMessageDialog(null,"Error"+e);
-        }
-        } 
+      sign_in_method();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -358,6 +340,43 @@ public  class starting_frame extends javax.swing.JFrame {
               mdi.setVisible(true);
                 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2KeyTyped
+
+    private void sign_in(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sign_in
+        // TODO add your handling code here:
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+            sign_in_method();
+         }
+            
+    }//GEN-LAST:event_sign_in
+
+    private void enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enter
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+            sign_in_method();
+         }
+    }//GEN-LAST:event_enter
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+            sign_in_method();
+         }
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+         if (evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+            sign_in_method();
+         }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -414,4 +433,51 @@ public  class starting_frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    private void sign_in_method() {
+         
+       if(jTextField1.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Email field is empty"); 
+            jTextField1.requestFocus();
+        }
+       if( jPasswordField1.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Password field is empty"); 
+            jPasswordField1.requestFocus();
+        }
+        else
+        {
+          String email = jTextField1.getText();
+          String pass = jPasswordField1.getText();
+          Statement stmt;
+      try{
+          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+          Connection c;
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+          stmt=c.createStatement();
+          ResultSet rs = stmt.executeQuery("select  owner_id, email, password from owner where email='"+email+"'and password='"+pass+"'");
+          rs.next();
+          System.out.print(owner_id);   
+          owner_email=rs.getString("email");
+          owner_pass=rs.getString("password");
+          if(owner_email.equals(email)&& owner_pass.equals(pass))       
+          {
+              JOptionPane.showMessageDialog(this,"Suuccessfully Login");
+              owner_id=rs.getInt("owner_id");
+              this.setVisible(false);
+             mdi = new MDIframe("signin");
+              mdi.setVisible(true);    
+          }
+         else 
+           {
+               JOptionPane.showMessageDialog(this,"Icorrect email or password");
+           }
+         }
+        catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+        } 
+    }
 }

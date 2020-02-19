@@ -142,6 +142,8 @@ Statement stmt;
         jRadioButton42 = new javax.swing.JRadioButton();
         jRadioButton43 = new javax.swing.JRadioButton();
         jRadioButton44 = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -154,9 +156,8 @@ Statement stmt;
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jSeparator11 = new javax.swing.JSeparator();
-        jSeparator12 = new javax.swing.JSeparator();
-        jSeparator13 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -165,44 +166,54 @@ Statement stmt;
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setText("Type");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Select Type");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel11.setText("Floor");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 66, -1, -1));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Select Floor");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jLabel12.setText("Budget");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 119, -1, -1));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Select Budget");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Balcony");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Facing");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Furnishing");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("Covered Area");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 79, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 130, -1));
 
-        jLabel17.setText("Preferred");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setText("Property required for");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setText("Amenties");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, -1, -1));
 
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("Posted Since");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, -1));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 430, 10));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 223, 450, 10));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 450, 10));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 450, 10));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 326, 450, 10));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 450, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 463, 450, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 450, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 450, 10));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, -1, -1));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 440, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 450, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 450, 10));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 450, 10));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 450, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 450, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 450, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 450, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 450, 10));
 
         jRadioButton1.setText("1BHK");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +221,7 @@ Statement stmt;
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 7, -1, -1));
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jRadioButton2.setText("2BHK");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +229,7 @@ Statement stmt;
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jRadioButton3.setText("3BHK");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +237,7 @@ Statement stmt;
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         jRadioButton4.setText("5BHK");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +245,7 @@ Statement stmt;
                 jRadioButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
 
         jRadioButton5.setText("4BHK");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +253,7 @@ Statement stmt;
                 jRadioButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
         jRadioButton6.setText("Ground");
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +261,7 @@ Statement stmt;
                 jRadioButton6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 62, -1, -1));
+        jPanel2.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         jRadioButton7.setText("Basement");
         jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +269,7 @@ Statement stmt;
                 jRadioButton7ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 62, -1, -1));
+        jPanel2.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         jRadioButton8.setText("1st");
         jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -266,7 +277,7 @@ Statement stmt;
                 jRadioButton8ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 62, -1, -1));
+        jPanel2.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         jRadioButton9.setText("2nd");
         jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +285,7 @@ Statement stmt;
                 jRadioButton9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 62, -1, -1));
+        jPanel2.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         jRadioButton10.setText("3rd");
         jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -282,7 +293,7 @@ Statement stmt;
                 jRadioButton10ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 62, -1, -1));
+        jPanel2.add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
 
         jRadioButton11.setText("4th");
         jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +301,7 @@ Statement stmt;
                 jRadioButton11ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 62, -1, -1));
+        jPanel2.add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         buttonGroup3.add(jRadioButton12);
         jRadioButton12.setText("1k - 2k");
@@ -299,7 +310,7 @@ Statement stmt;
                 jRadioButton12ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jPanel2.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         buttonGroup3.add(jRadioButton13);
         jRadioButton13.setText("2k - 3k");
@@ -308,7 +319,7 @@ Statement stmt;
                 jRadioButton13ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+        jPanel2.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         buttonGroup3.add(jRadioButton14);
         jRadioButton14.setText("10k +");
@@ -317,7 +328,7 @@ Statement stmt;
                 jRadioButton14ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+        jPanel2.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
 
         buttonGroup3.add(jRadioButton15);
         jRadioButton15.setText("5k - 10k");
@@ -326,7 +337,7 @@ Statement stmt;
                 jRadioButton15ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jPanel2.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
 
         buttonGroup3.add(jRadioButton16);
         jRadioButton16.setText("3k - 4k");
@@ -335,7 +346,7 @@ Statement stmt;
                 jRadioButton16ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
+        jPanel2.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
 
         buttonGroup3.add(jRadioButton17);
         jRadioButton17.setText("4k - 5k");
@@ -344,7 +355,7 @@ Statement stmt;
                 jRadioButton17ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
+        jPanel2.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
 
         jRadioButton18.setText("North-west");
         jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -352,7 +363,7 @@ Statement stmt;
                 jRadioButton18ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
+        jPanel2.add(jRadioButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
         jRadioButton19.setText("North");
         jRadioButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -360,7 +371,7 @@ Statement stmt;
                 jRadioButton19ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+        jPanel2.add(jRadioButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jRadioButton20.setText("East");
         jRadioButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -368,7 +379,7 @@ Statement stmt;
                 jRadioButton20ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
+        jPanel2.add(jRadioButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         jRadioButton21.setText("South");
         jRadioButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -376,7 +387,7 @@ Statement stmt;
                 jRadioButton21ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        jPanel2.add(jRadioButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
         jRadioButton22.setText("West");
         jRadioButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -384,7 +395,7 @@ Statement stmt;
                 jRadioButton22ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
+        jPanel2.add(jRadioButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
         jRadioButton23.setText("North-East");
         jRadioButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -392,7 +403,7 @@ Statement stmt;
                 jRadioButton23ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        jPanel2.add(jRadioButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
         jRadioButton24.setText("South-East");
         jRadioButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -400,7 +411,7 @@ Statement stmt;
                 jRadioButton24ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        jPanel2.add(jRadioButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         jRadioButton25.setText("South-west");
         jRadioButton25.addActionListener(new java.awt.event.ActionListener() {
@@ -408,7 +419,7 @@ Statement stmt;
                 jRadioButton25ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+        jPanel2.add(jRadioButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         jRadioButton26.setText("Unfurnished");
         jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
@@ -416,7 +427,7 @@ Statement stmt;
                 jRadioButton26ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
+        jPanel2.add(jRadioButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
 
         jRadioButton27.setText("Semi-furnished");
         jRadioButton27.addActionListener(new java.awt.event.ActionListener() {
@@ -424,7 +435,7 @@ Statement stmt;
                 jRadioButton27ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        jPanel2.add(jRadioButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
         jRadioButton28.setText("Furnished");
         jRadioButton28.addActionListener(new java.awt.event.ActionListener() {
@@ -432,43 +443,39 @@ Statement stmt;
                 jRadioButton28ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        jPanel2.add(jRadioButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
-        buttonGroup7.add(jRadioButton29);
         jRadioButton29.setText("Yes");
         jRadioButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton29ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
+        jPanel2.add(jRadioButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
 
-        buttonGroup6.add(jRadioButton31);
         jRadioButton31.setText("Bachlors");
         jRadioButton31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton31ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+        jPanel2.add(jRadioButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
-        buttonGroup6.add(jRadioButton32);
         jRadioButton32.setText("family");
         jRadioButton32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton32ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        jPanel2.add(jRadioButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, -1, -1));
 
-        buttonGroup7.add(jRadioButton33);
         jRadioButton33.setText("No");
         jRadioButton33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton33ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
+        jPanel2.add(jRadioButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, -1, -1));
 
         jCheckBox1.setText("Lift");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -476,7 +483,7 @@ Statement stmt;
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
 
         jCheckBox2.setText("Garden");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -484,7 +491,7 @@ Statement stmt;
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
+        jPanel2.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, -1, -1));
 
         jCheckBox3.setText("Parking");
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
@@ -492,7 +499,7 @@ Statement stmt;
                 jCheckBox3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, -1, -1));
+        jPanel2.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 620, -1, -1));
 
         jCheckBox4.setText("Air-conditioned");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -500,7 +507,7 @@ Statement stmt;
                 jCheckBox4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, -1, -1));
+        jPanel2.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 620, -1, -1));
 
         jCheckBox5.setText("Water tank");
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
@@ -508,7 +515,7 @@ Statement stmt;
                 jCheckBox5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, -1));
+        jPanel2.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 620, -1, -1));
 
         jCheckBox6.setText("Wi-fi");
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -516,7 +523,7 @@ Statement stmt;
                 jCheckBox6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        jPanel2.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, -1, -1));
 
         jRadioButton34.setText("Last month");
         jRadioButton34.addActionListener(new java.awt.event.ActionListener() {
@@ -524,7 +531,7 @@ Statement stmt;
                 jRadioButton34ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
+        jPanel2.add(jRadioButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, 80, -1));
 
         jRadioButton35.setText("Last week");
         jRadioButton35.addActionListener(new java.awt.event.ActionListener() {
@@ -532,7 +539,7 @@ Statement stmt;
                 jRadioButton35ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, -1, -1));
+        jPanel2.add(jRadioButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 660, -1, -1));
 
         jRadioButton36.setText("Last 3 week");
         jRadioButton36.addActionListener(new java.awt.event.ActionListener() {
@@ -540,7 +547,7 @@ Statement stmt;
                 jRadioButton36ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, -1, -1));
+        jPanel2.add(jRadioButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 660, -1, -1));
 
         jRadioButton37.setText("Last 2 week");
         jRadioButton37.addActionListener(new java.awt.event.ActionListener() {
@@ -548,7 +555,7 @@ Statement stmt;
                 jRadioButton37ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, -1, -1));
+        jPanel2.add(jRadioButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 660, -1, -1));
 
         jRadioButton38.setText("All");
         jRadioButton38.addActionListener(new java.awt.event.ActionListener() {
@@ -556,7 +563,7 @@ Statement stmt;
                 jRadioButton38ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+        jPanel2.add(jRadioButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, -1, -1));
 
         jRadioButton39.setText("150+ sqft. ");
         jRadioButton39.addActionListener(new java.awt.event.ActionListener() {
@@ -564,7 +571,7 @@ Statement stmt;
                 jRadioButton39ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+        jPanel2.add(jRadioButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, -1, -1));
 
         jRadioButton40.setText("0-25 sqft.");
         jRadioButton40.addActionListener(new java.awt.event.ActionListener() {
@@ -572,7 +579,7 @@ Statement stmt;
                 jRadioButton40ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        jPanel2.add(jRadioButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
         jRadioButton41.setText("25-50 sqft.");
         jRadioButton41.addActionListener(new java.awt.event.ActionListener() {
@@ -580,7 +587,7 @@ Statement stmt;
                 jRadioButton41ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+        jPanel2.add(jRadioButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
 
         jRadioButton42.setText("75-100 sqft.");
         jRadioButton42.addActionListener(new java.awt.event.ActionListener() {
@@ -588,7 +595,7 @@ Statement stmt;
                 jRadioButton42ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+        jPanel2.add(jRadioButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
 
         jRadioButton43.setText("100-150 sqft");
         jRadioButton43.addActionListener(new java.awt.event.ActionListener() {
@@ -596,7 +603,7 @@ Statement stmt;
                 jRadioButton43ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+        jPanel2.add(jRadioButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
 
         jRadioButton44.setText("50-75 sqft.");
         jRadioButton44.addActionListener(new java.awt.event.ActionListener() {
@@ -604,9 +611,15 @@ Statement stmt;
                 jRadioButton44ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+        jPanel2.add(jRadioButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 710));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 450, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 450, 330));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 700));
 
         jLabel9.setText("jLabel9");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
@@ -624,14 +637,18 @@ Statement stmt;
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 710, 390));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 820, 430));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Total search result");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 20, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("0");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, -1, -1));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 230, 10));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 50, -1, -1));
+        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 820, 10));
 
         jButton1.setText("View details");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -639,18 +656,39 @@ Statement stmt;
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 630, 300, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 570, 370, 60));
 
         jButton2.setText("Book");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 630, 360, 60));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 570, 410, 60));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("City");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 50, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jComboBox1MousePressed(evt);
+            }
+        });
+        jComboBox1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                jComboBox1CaretPositionChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, -1));
@@ -661,23 +699,32 @@ Statement stmt;
                 jComboBox2ItemStateChanged(evt);
             }
         });
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 160, -1));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 160, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Colony");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
-        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 210, -1));
-        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 62, 230, 10));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 122, 230, 10));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Searched Result");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/37705.jpg"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 2560, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -929,7 +976,7 @@ Statement stmt;
     }//GEN-LAST:event_jRadioButton34ActionPerformed
 
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-        // TODO add your handlingcode here:
+//         TODO add your handlingcode here:
 //        property_search_filter();
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
@@ -942,10 +989,30 @@ Statement stmt;
         // TODO add your handling code here:
         if(jTable1.getSelectedRow()!=-1)
         {
-           int row jTable1.getSelectedRow();
-           pid=jTable1.getValueAt(row, )
+//           int row jTable1.getSelectedRow();
+//           pid=jTable1.getValueAt(row, )
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+//        property_search_filter();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+        // TODO add your handling code here:
+        property_search_filter();
+    }//GEN-LAST:event_jComboBox1MouseClicked
+
+    private void jComboBox1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MousePressed
+        // TODO add your handling code here:
+        property_search_filter();
+    }//GEN-LAST:event_jComboBox1MousePressed
+
+    private void jComboBox1CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jComboBox1CaretPositionChanged
+        // TODO add your handling code here:
+        property_search_filter();
+    }//GEN-LAST:event_jComboBox1CaretPositionChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -980,6 +1047,10 @@ Statement stmt;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1029,9 +1100,6 @@ Statement stmt;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1045,7 +1113,7 @@ Statement stmt;
 
     private void property_search_filter() {
         //To change body of generated methods, choose Tools | Templates.
-        String filter="select owner_id,rent,city,colony from property_master where";
+        String filter="select property_id,rent,type,floor,balcony,preferred,furshing from property_master where";
         try
         {
             
@@ -1146,11 +1214,11 @@ Statement stmt;
           {
 //             filter= filter.concat(" type =");
           if(jRadioButton28.isSelected())
-               filter = filter.concat(" furshing = 'Furnished' or");
+               filter = filter.concat(" furshing = ' Furnished' or");
           if(jRadioButton27.isSelected())
-               filter = filter.concat(" furshing = 'Semi-furnished' or");  
+               filter = filter.concat(" furshing = ' Semi-furnished' or");  
           if(jRadioButton26.isSelected())
-               filter = filter.concat(" furshing = 'Unfurnished' or"); 
+               filter = filter.concat(" furshing = ' Unfurnished' or"); 
          
             
           if(filter.endsWith("or"))
@@ -1260,6 +1328,20 @@ Statement stmt;
 //                  }
 //          }  
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+      String item1 = jComboBox1.getSelectedItem().toString();
+      if(item1!=null)
+      {
+          filter  = filter.concat(" city = '"+item1+" and");
+      
+      if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+      }
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           if(filter.endsWith("where"))
                   {
                       int index = filter.lastIndexOf("where");
@@ -1297,6 +1379,15 @@ Statement stmt;
         catch(SQLException e)
         {
             JOptionPane.showMessageDialog(null,"Error"+e);
+            this.setVisible(false);
+             starting_frame sf =new starting_frame();
+        sf.setVisible(true);
         }
+      
+//        finally{
+//              this.setVisible(false);
+//              starting_frame sf =new starting_frame();
+//              sf.setVisible(true);
+//        }
     }
 }

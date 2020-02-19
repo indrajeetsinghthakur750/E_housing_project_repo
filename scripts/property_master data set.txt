@@ -1,0 +1,251 @@
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1200 , sysdate ,100 , 3 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 135);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 1500 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' vijay nagar', 135);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' vijay nagar', 136);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2000 , sysdate ,100 , 4 , 'Separate ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 136);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 3000 , sysdate ,100 , 4 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 136);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 4 , 'Separate ','North' , 'Bachlor' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 137);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2700 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 137);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 3500 , sysdate ,100 , 3, 'Separate ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 138);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 4500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 139);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 2500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Family' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 139);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 4500 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 140);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 4000 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 140);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Semi-furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 141);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 141);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2500 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 142);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 5500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Bachlor' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 143);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 143);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 2800 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 144);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 6000 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 145);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1100 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 145);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1200 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 8500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 12500 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 16500 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 139);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 23000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 19500 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 9600 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 6700 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlory' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 5300 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 5700 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2700 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2600 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 8500 , sysdate ,100 , 1, 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 7900 , sysdate ,100 , 1 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 12600 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 146);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 6800 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 147);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 25000 , sysdate ,100 , 4 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 148);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 18000 , sysdate ,100 , 4 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 149);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 22000 , sysdate ,100 , 3 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 150);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 14000 , sysdate ,100 , 2, 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 150);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 9500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 151);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 8500 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 152);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 5500 , sysdate ,100 , 1 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 153);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 7500 , sysdate ,100 , 1, 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 153);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4500 , sysdate ,100 , 1 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 154);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 3400 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 155);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2200 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 155);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 4100 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 156);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 156);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 157);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 6000 , sysdate ,100 , 5 , 'Combine in rent ','North' , 'Family' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 157);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 7500 , sysdate ,100 , 5 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 158);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 11000 , sysdate ,100 , 5 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 159);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 14000 , sysdate ,100 , 5 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 12000 , sysdate ,100 , 5 , 'Combine in rent ','North' , 'Family' , ' Unfurnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '5BHK' , 10100 , sysdate ,100 , 5 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 8900 , sysdate ,100 , 4 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '4BHK' , 10000 , sysdate ,100 , 4 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 9000 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '3BHK' , 3500 , sysdate ,100 , 3 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 8500 , sysdate ,100 , 3 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 7500 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 8000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1800 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2400 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'No' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1200 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 1500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 2000 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 3500 , sysdate ,100 , 0 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4700 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 6000 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '1BHK' , 400 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 6500 , sysdate ,100 , 2 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 6000 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 7500 , sysdate ,100 , 2 , 'Combine in rent ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4500 , sysdate ,100 , 1, 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 5000 , sysdate ,100 , 1, 'Separate ','North' , 'Family' , ' Semi-furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 4900 , sysdate ,100 , 1 , 'Separate ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2300 , sysdate ,100 , 1 , 'Separate ','North' , 'Bachlor' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 3500 , sysdate ,100 , 1 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'Yes' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
+
+insert into property_master(owner_id,type,rent,posted_date,area,floor,water,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) 
+ values(2,  '2BHK' , 2500 , sysdate ,100 , 0 , 'Combine in rent ','North' , 'Family' , ' Furnished' , 'Wif-fi' , 'No' , 'Yes' , 'Sagar' , '123456' ,'SBI bank' ,' Gopalganj', 134);
