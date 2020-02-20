@@ -1,6 +1,7 @@
 package e_housing_project;
 
 import static e_housing_project.owner_page.id;
+import static e_housing_project.starting_frame.owner_id;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -9,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /*
@@ -33,6 +35,7 @@ public class update_property extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
+        load();
        set_property(id);
     }
 
@@ -47,6 +50,7 @@ public class update_property extends javax.swing.JInternalFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -86,7 +90,6 @@ public class update_property extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
@@ -96,7 +99,13 @@ public class update_property extends javax.swing.JInternalFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -221,6 +230,26 @@ public class update_property extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jCheckBox6))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCheckBox2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox3))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCheckBox5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox4))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel18)
@@ -228,33 +257,15 @@ public class update_property extends javax.swing.JInternalFrame {
                                 .addComponent(jRadioButton4)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRadioButton3))
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
                                 .addComponent(jLabel19)
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox8))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jCheckBox6))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jCheckBox2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBox3))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jCheckBox5)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBox4)))))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jCheckBox8)))
+                        .addGap(149, 149, 149)))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +313,7 @@ public class update_property extends javax.swing.JInternalFrame {
                     .addComponent(jCheckBox6)
                     .addComponent(jCheckBox5)
                     .addComponent(jCheckBox4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,10 +324,10 @@ public class update_property extends javax.swing.JInternalFrame {
                     .addComponent(jLabel18)
                     .addComponent(jRadioButton4)
                     .addComponent(jRadioButton3))
-                .addContainerGap())
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 410, 500));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,12 +337,12 @@ public class update_property extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("City");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jLabel2.setText("Location");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Pincode");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Rent ");
@@ -339,11 +350,11 @@ public class update_property extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Landmark");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Colony");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
 
         jTextField1.setBorder(null);
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 280, -1));
@@ -351,28 +362,69 @@ public class update_property extends javax.swing.JInternalFrame {
         jTextField2.setBorder(null);
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 280, -1));
 
-        jTextField3.setBorder(null);
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, -1));
-
         jTextField4.setBorder(null);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, -1));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 280, -1));
 
         jTextField5.setBorder(null);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 280, -1));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 280, -1));
 
         jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 280, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 280, -1));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 280, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 280, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 280, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 280, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 280, -1));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 280, -1));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 280, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 280, -1));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 280, -1));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 280, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 368, 382));
+        jComboBox6.setBorder(null);
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 260, -1));
+
+        jPanel1.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 260, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("City");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 368, 500));
 
         jButton1.setText("Update Propety");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 420, 80));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 1080, 80));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "Images"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 80, 310, 430));
+
+        jButton2.setText("Browse Images");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 23, 310, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -381,11 +433,175 @@ public class update_property extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String type = jComboBox1.getSelectedItem().toString();
+        int locality_id=0;
+        int rent =Integer.parseInt(jTextField2.getText());
+        System.out.print(rent);
+//        String posted_date =jTextField4.getText().toString();
+        int area = Integer.parseInt(jTextField1.getText());
+        System.out.print(area);
+        int floor;
+        floor = jComboBox2.getSelectedIndex();
+        System.out.print(floor);
+         String city =jComboBox6.getSelectedItem().toString();
+        System.out.print(city);
+         String location =jComboBox8.getSelectedItem().toString();
+        System.out.print(location);
+        try{
+             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           System.out.println("3"); 
+          Connection c4;
+           Statement stmt4;
+            c4 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+           System.out.println("4");
+            stmt4=c4.createStatement();
+             System.out.println("5");
+             ResultSet rs4;
+            rs4 = stmt4.executeQuery("select locality_id from locality_master where city='"+city+"' and location_name='"+location+"'");
+            rs4.next();
+      locality_id = rs4.getInt("locality_id");  
+      c4.close();
+        }
+        catch(SQLException e)
+        {
+            
+        }
+       
+//        System.out.print(locality_id);
+        String water= jComboBox7.getSelectedItem().toString();
+        System.out.print(water);
+        String electricity = jComboBox5.getSelectedItem().toString();
+        System.out.print(electricity);
+        String facing= jComboBox3.getSelectedItem().toString();
+        System.out.print(facing);
+        String preferred="";
+          if(jCheckBox7.isSelected())
+            preferred+="  Family";
+        if(jCheckBox8.isSelected())
+            preferred+=" Bachlor ";
+        
+        System.out.print(preferred);
+        
+        String furnishing= jComboBox4.getSelectedItem().toString();
+        System.out.print(furnishing);
+        
+        String amenties="";
+        if(jCheckBox1.isSelected())
+            amenties+=" Lift ";
+        if(jCheckBox2.isSelected())
+            amenties+=" Garden ";
+        if(jCheckBox3.isSelected())
+            amenties+=" Parking ";
+        if(jCheckBox4.isSelected())
+            amenties+=" Air-conditioned ";
+        if(jCheckBox5.isSelected())
+            amenties+=" Water-tank ";
+        if(jCheckBox6.isSelected())
+            amenties+=" Wi-fi ";
+      System.out.print(amenties);
+            
+        String balcony="";
+        if(jRadioButton1.isSelected())
+            balcony+="Yes";
+        else
+            balcony+="No";
+ 
+        System.out.print(balcony);
+         String available="";
+        if(jRadioButton1.isSelected())
+            available+="yes";
+        else
+            available+="Not";
+      
+        System.out.print(available);
+        int id=owner_id;
+       
+       
+        String pincode =jTextField4.getText();
+        System.out.print(pincode);
+        String landmark =jTextField5.getText();
+        System.out.print(landmark);
+        String colony =jTextField6.getText();
+        System.out.print(colony);
+        
+        String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
+       
+        Statement stmt;
+        try{
+        System.out.println("2");
+          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           System.out.println("3"); 
+          Connection c;
+            c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+           System.out.println("4");
+            stmt=c.createStatement();
+             System.out.println("5");
+             stmt.executeUpdate(sql);            
+            c.close();
+           JOptionPane.showMessageDialog(null,"Successfully added the property");
+//           owner_page op=new owner_page();
+//           dp1.add(op);
+//           op.setVisible(true);
+        }
+        catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null,"Error"+e);
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+        jComboBox8.removeAllItems();
+        String ct=jComboBox6.getSelectedItem().toString();
+        try{
+
+            ResultSet rs2;
+            Statement stmt2;
+            Connection c2;
+            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+
+            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+            stmt2=c2.createStatement();
+            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+            while(rs2.next())
+            {
+                String l = rs2.getString("location_name");
+                jComboBox8.addItem(l);
+            }
+            c2.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+//        jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
+//        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
+//        jFileChooser1.addChoosableFileFilter(filter);
+//        int result = jFileChooser1.showDialog(this, title);
+//        if(result == JFileChooser.APPROVE_OPTION){
+//            File sf = jFileChooser1.getSelectedFile();
+//            String path = sf.getAbsolutePath();
+//            jLabel17.setIcon(ResizeImage(path));
+//        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -399,7 +615,10 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -416,12 +635,14 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -429,9 +650,9 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -459,7 +680,7 @@ public class update_property extends javax.swing.JInternalFrame {
           
           String city = rs.getString("city");
           System.out.print("hello"+city);
-          jTextField3.setText(city);
+          jComboBox6.setSelectedItem(city);
           
           String pincode = rs.getString("pincode");
           System.out.print("hello"+pincode);
@@ -549,5 +770,30 @@ public class update_property extends javax.swing.JInternalFrame {
        {
            
        }
+    }
+
+    private void load() {
+        try{
+              ResultSet rs;
+              Statement stmt1;
+              Connection c1;
+              DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+           
+            c1 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+             stmt1=c1.createStatement();
+            rs= stmt1.executeQuery("select distinct city from locality_master ");
+    
+           
+                while(rs.next())
+                {
+                String ct = rs.getString("city");
+                jComboBox6.addItem(ct);
+                }
+               
+         }
+         catch(SQLException e)
+         {
+             JOptionPane.showMessageDialog(null,"Error"+e);
+         }
     }
 }

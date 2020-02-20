@@ -5,6 +5,7 @@
  */
 package e_housing_project;
 
+import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.MDIframe.jMenuItem5;
 import static e_housing_project.MDIframe.jMenuItem6;
 import static e_housing_project.owner_page.jTable1;
@@ -144,6 +145,7 @@ Statement stmt;
         jRadioButton44 = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -168,7 +170,7 @@ Statement stmt;
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Select Type");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Select Floor");
@@ -221,7 +223,7 @@ Statement stmt;
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         jRadioButton2.setText("2BHK");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +231,7 @@ Statement stmt;
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
 
         jRadioButton3.setText("3BHK");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +239,7 @@ Statement stmt;
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
 
         jRadioButton4.setText("5BHK");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +247,7 @@ Statement stmt;
                 jRadioButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
+        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
 
         jRadioButton5.setText("4BHK");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +255,7 @@ Statement stmt;
                 jRadioButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+        jPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, -1));
 
         jRadioButton6.setText("Ground");
         jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -614,15 +616,18 @@ Statement stmt;
         jPanel2.add(jRadioButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 450, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 450, 330));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 700));
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-single-choice-32.png"))); // NOI18N
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel9.setText("jLabel9");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 460, 640));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-single-choice-32.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -635,6 +640,11 @@ Statement stmt;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 820, 430));
@@ -1014,6 +1024,21 @@ Statement stmt;
         property_search_filter();
     }//GEN-LAST:event_jComboBox1CaretPositionChanged
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+       
+        int row = jTable1.getSelectedRow();
+        if(jTable1.getSelectedRow()!= -1)
+        {
+            
+        Object pid = jTable1.getValueAt(row, 0);
+        property_detail pd = new property_detail(pid);
+        dp1.add(pd);
+        pd.setVisible(true);
+    
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1045,6 +1070,7 @@ Statement stmt;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1329,18 +1355,18 @@ Statement stmt;
 //          }  
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   
-      String item1 = jComboBox1.getSelectedItem().toString();
-      if(item1!=null)
-      {
-          filter  = filter.concat(" city = '"+item1+" and");
-      
-      if(filter.endsWith("or"))
-                  {
-                      int index = filter.lastIndexOf("or");
-                      filter = filter.substring(0, index);
-                      filter=filter.concat(" and");
-                  }
-      }
+//      String item1 = jComboBox1.getSelectedItem().toString();
+//      if(item1!=null)
+//      {
+//          filter  = filter.concat(" city = '"+item1+" and");
+//      
+//      if(filter.endsWith("or"))
+//                  {
+//                      int index = filter.lastIndexOf("or");
+//                      filter = filter.substring(0, index);
+//                      filter=filter.concat(" and");
+//                  }
+//      }
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           if(filter.endsWith("where"))
                   {

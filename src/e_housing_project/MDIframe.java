@@ -10,6 +10,8 @@ import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.owner_page.id;
 import static e_housing_project.owner_page.jTable1;
 import static e_housing_project.owner_page.show_property;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -34,6 +36,9 @@ public class MDIframe extends javax.swing.JFrame {
      */
     public MDIframe(String status) {
         initComponents();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+     this.setSize(screenSize.width, screenSize.height);
+    
         jMenuItem1.setVisible(false);
         jMenuItem2.setVisible(false);
         jMenuItem3.setVisible(false);
