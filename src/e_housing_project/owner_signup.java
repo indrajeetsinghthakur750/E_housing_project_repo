@@ -10,6 +10,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -269,10 +271,10 @@ public class owner_signup extends javax.swing.JInternalFrame {
       
         Statement stmt; 
         try{
-//              BufferedImage bimage= ImageIO.read(this.sf);
-//        WritableImage img = null;
-//            img = SwingFXUtils.toFXImage(bimage, img);
-        String sql = "insert into owner(owner_name,email,phone,password,adhar,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+status+"')";
+            FileInputStream file_in = new FileInputStream(sf);
+            file_in.toString();
+          
+        String sql = "insert into owner(owner_name,email,phone,password,adhar,adhar_image,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+file_in+"','"+status+"')";
         System.out.println("2");
         DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
         System.out.println("3"); 
@@ -284,8 +286,9 @@ public class owner_signup extends javax.swing.JInternalFrame {
         stmt.executeUpdate(sql);
         JOptionPane.showMessageDialog(this,"You have register successfully");
         }
-        catch(SQLException e)
+        catch(SQLException | FileNotFoundException e)
         {
+            JOptionPane.showMessageDialog(null,"Error"+e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
