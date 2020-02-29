@@ -49,6 +49,14 @@ Statement stmt;
           c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
           System.out.println("114");
          stmt = c.createStatement();
+         
+            rs2 =stmt.executeQuery("select distinct city from property_master");
+         jComboBox1.removeAllItems();
+          while (rs2.next()) {
+              String item =rs2.getString("city");
+                    jComboBox1.addItem(item);
+       
+                    }
          property_search_filter();
         }
         catch(SQLException e)
@@ -642,7 +650,6 @@ Statement stmt;
             }
         ));
         jTable1.setRowHeight(50);
-        jTable1.setShowVerticalLines(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -688,8 +695,14 @@ Statement stmt;
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboBox1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jComboBox1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseReleased(evt);
             }
         });
         jComboBox1.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -697,6 +710,7 @@ Statement stmt;
                 jComboBox1CaretPositionChanged(evt);
             }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jComboBox1InputMethodTextChanged(evt);
             }
         });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -704,7 +718,7 @@ Statement stmt;
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 160, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.addItemListener(new java.awt.event.ItemListener() {
@@ -712,7 +726,7 @@ Statement stmt;
                 jComboBox2ItemStateChanged(evt);
             }
         });
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 160, -1));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -1014,17 +1028,17 @@ Statement stmt;
 
     private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
         // TODO add your handling code here:
-        property_search_filter();
+//        property_search_filter();
     }//GEN-LAST:event_jComboBox1MouseClicked
 
     private void jComboBox1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MousePressed
         // TODO add your handling code here:
-        property_search_filter();
+//        property_search_filter();
     }//GEN-LAST:event_jComboBox1MousePressed
 
     private void jComboBox1CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jComboBox1CaretPositionChanged
         // TODO add your handling code here:
-        property_search_filter();
+//        property_search_filter();
     }//GEN-LAST:event_jComboBox1CaretPositionChanged
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -1041,6 +1055,19 @@ Statement stmt;
     
         }
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jComboBox1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jComboBox1InputMethodTextChanged
+// property_search_filter();
+    }//GEN-LAST:event_jComboBox1InputMethodTextChanged
+
+    private void jComboBox1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseExited
+        // TODO add your handling code here:
+//         property_search_filter();
+    }//GEN-LAST:event_jComboBox1MouseExited
+
+    private void jComboBox1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseReleased
+// property_search_filter();
+    }//GEN-LAST:event_jComboBox1MouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1357,19 +1384,20 @@ Statement stmt;
 //                  }
 //          }  
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  
-//      String item1 = jComboBox1.getSelectedItem().toString();
-//      if(item1!=null)
-//      {
-//          filter  = filter.concat(" city = '"+item1+" and");
-//      
-//      if(filter.endsWith("or"))
-//                  {
-//                      int index = filter.lastIndexOf("or");
-//                      filter = filter.substring(0, index);
-//                      filter=filter.concat(" and");
-//                  }
-//      }
+  if(jComboBox1.getSelectedIndex()!=-1)
+  {  String item1 = jComboBox1.getSelectedItem().toString();
+      if(item1!=null)
+      {
+          filter  = filter.concat(" city = '"+item1+"' and");
+      
+      if(filter.endsWith("or"))
+                  {
+                      int index = filter.lastIndexOf("or");
+                      filter = filter.substring(0, index);
+                      filter=filter.concat(" and");
+                  }
+      }
+  }
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           if(filter.endsWith("where"))
                   {
@@ -1395,13 +1423,7 @@ Statement stmt;
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
            int count = jTable1.getRowCount();
            rs.close();
-            rs2 =stmt.executeQuery("select distinct city from property_master");
-         jComboBox1.removeAllItems();
-          while (rs2.next()) {
-              String item =rs2.getString("city");
-                    jComboBox1.addItem(item);
-       
-                    }
+         
            jLabel2.setText((count+""));
 //           c.close();
         }
