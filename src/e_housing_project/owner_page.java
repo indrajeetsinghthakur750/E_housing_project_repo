@@ -33,7 +33,7 @@ public class owner_page extends javax.swing.JInternalFrame {
     /**
      *
      */
-    public static Object id;
+    public static Object id=-1;
      
         
     /**
@@ -81,6 +81,7 @@ public class owner_page extends javax.swing.JInternalFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setText("Welcome to the E-Housing Desktop Application");
 
+        jTable1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -92,7 +93,15 @@ public class owner_page extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setColumnSelectionAllowed(false);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTable1.setDropMode(javax.swing.DropMode.ON);
+        jTable1.setEditingColumn(0);
+        jTable1.setEditingRow(0);
+        jTable1.setRowHeight(80);
+        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        jTable1.setShowVerticalLines(false);
+        jTable1.setSurrendersFocusOnKeystroke(true);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -186,7 +195,7 @@ public class owner_page extends javax.swing.JInternalFrame {
           Connection c;
           c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); Statement stmt = c.createStatement();
           ResultSet rs;
-          rs = stmt.executeQuery("select  * from  property_master where owner_id="+owner_id+"");
+          rs = stmt.executeQuery("select  property_id,type,rent,floor,city,colony,pincode from  property_master where owner_id="+owner_id+"");
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
    
     }   catch (SQLException e) {

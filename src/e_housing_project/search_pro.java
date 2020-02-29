@@ -49,12 +49,13 @@ Statement stmt;
           c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
           System.out.println("114");
          stmt = c.createStatement();
+         property_search_filter();
         }
         catch(SQLException e)
         {
              JOptionPane.showMessageDialog(null,"Error"+e);
         }
-          property_search_filter();
+          
     }
 
     /**
@@ -640,6 +641,8 @@ Statement stmt;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setRowHeight(50);
+        jTable1.setShowVerticalLines(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -690,10 +693,10 @@ Statement stmt;
             }
         });
         jComboBox1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 jComboBox1CaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {

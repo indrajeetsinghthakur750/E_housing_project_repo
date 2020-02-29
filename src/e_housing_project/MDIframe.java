@@ -307,14 +307,16 @@ public class MDIframe extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:\
-           update_property ups = new update_property();
-    
-      dp1.add(ups);
-      ups.setVisible(true);
+           update_property ups = new update_property(id);
+           dp1.add(ups);
+           ups.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
           // TODO add your handling code here:
+          Object i =-1;
+          if(id != i)
+          {
           int showConfirmDialog;
           showConfirmDialog = JOptionPane.showConfirmDialog(null,"Are You sure want to delete this property","Delete",JOptionPane.YES_NO_OPTION);
 //           delete_property dp = new delete_property();h
@@ -333,12 +335,18 @@ public class MDIframe extends javax.swing.JFrame {
           
            System.out.println("Property Delete Successfully");
            show_property();
-        
+                  
        
     }   catch (SQLException ex) {
-            Logger.getLogger(owner_page.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(null,"Error"+ex); 
         }
+             
              }
+         }
+          else 
+          {
+          JOptionPane.showMessageDialog(null,"Please select a property");
+          }
           
              
              

@@ -1,17 +1,23 @@
 package e_housing_project;
 
+import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.owner_page.id;
 import static e_housing_project.starting_frame.owner_id;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.ComboBoxModel;
+import javax.swing.Icon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import static oracle.net.aso.C11.i;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -24,12 +30,13 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  * @author Indrajeet singh
  */
 public class update_property extends javax.swing.JInternalFrame {
-
+Object pid;
     /**
      * Creates new form update_property
      */
-    public update_property() {
+    public update_property(Object pid) {
         initComponents();
+        this.pid=pid;
           this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
         BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
         bif.setNorthPane(null);
@@ -102,6 +109,7 @@ public class update_property extends javax.swing.JInternalFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         jComboBox8 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -396,6 +404,14 @@ public class update_property extends javax.swing.JInternalFrame {
         jLabel7.setText("City");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-back-arrow-24.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 368, 500));
 
         jButton1.setText("Update Propety");
@@ -526,7 +542,7 @@ public class update_property extends javax.swing.JInternalFrame {
         String colony =jTextField6.getText();
         System.out.print(colony);
         
-        String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
+        String sql ="update property_master set type ='"+type+"', rent = "+rent+",area = "+area+", floor ="+floor+", water = '"+water+"', electricity ='"+electricity+"',facing = '"+facing+"', preferred = '"+preferred+"', furshing = '"+furnishing+"',amenties = '"+amenties+"',balcony = '"+balcony+"',available = '"+available+"',city = '"+city+"', pincode = '"+pincode+"',landmark = '"+landmark+"',colony =  '"+colony+"',locality_id = "+locality_id+" where property_id = "+pid ;
        
         Statement stmt;
         try{
@@ -540,10 +556,12 @@ public class update_property extends javax.swing.JInternalFrame {
              System.out.println("5");
              stmt.executeUpdate(sql);            
             c.close();
-           JOptionPane.showMessageDialog(null,"Successfully added the property");
-//           owner_page op=new owner_page();
-//           dp1.add(op);
-//           op.setVisible(true);
+           JOptionPane.showMessageDialog(null,"Successfully updated the property : \n property id is "+pid+" ");
+           
+           owner_page op=new owner_page();
+           dp1.add(op);
+           
+           op.setVisible(true);
         }
         catch(SQLException e)
         {
@@ -584,17 +602,25 @@ public class update_property extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-//        jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
-//        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
-//        jFileChooser1.addChoosableFileFilter(filter);
-//        int result = jFileChooser1.showDialog(this, title);
-//        if(result == JFileChooser.APPROVE_OPTION){
-//            File sf = jFileChooser1.getSelectedFile();
-//            String path = sf.getAbsolutePath();
-//            jLabel17.setIcon(ResizeImage(path));
+//         TODO add your handling code here:
+        jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
+        jFileChooser1.addChoosableFileFilter(filter);
+        int result = jFileChooser1.showDialog(this, title);
+        if(result == JFileChooser.APPROVE_OPTION){
+            File sf = jFileChooser1.getSelectedFile();
+            String path = sf.getAbsolutePath();
+           
+        }
 //        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        owner_page op =new  owner_page();
+        this.setVisible(false);
+        op.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -636,6 +662,7 @@ public class update_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
@@ -795,5 +822,9 @@ public class update_property extends javax.swing.JInternalFrame {
          {
              JOptionPane.showMessageDialog(null,"Error"+e);
          }
+    }
+
+    private Icon ResizeImage(String path) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
