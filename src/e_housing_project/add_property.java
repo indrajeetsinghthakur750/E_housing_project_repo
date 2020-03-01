@@ -4,22 +4,19 @@
  * and open the template in the editor.
  */
 package e_housing_project;
-import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.starting_frame.owner_id;
+import static e_housing_project.MDIframe.dp1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 /**
  *
@@ -27,7 +24,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class add_property extends javax.swing.JInternalFrame {
 
-    
+    Connection c;
+    Statement stmt,stmt1,stmt2,stmt3;
+    ResultSet rs,rs1,rs2;
    
     /**
      * Creates new form add_property
@@ -39,9 +38,16 @@ public class add_property extends javax.swing.JInternalFrame {
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
+         try{
+             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+            c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+            }
+         catch(SQLException e)
+            {
+            JOptionPane.showMessageDialog(null,"Error"+e);
+            }
           jComboBox6.removeAllItems();
-          
-           load();
+          load();
         
     }
 
@@ -80,6 +86,7 @@ public class add_property extends javax.swing.JInternalFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jComboBox8 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -110,7 +117,6 @@ public class add_property extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -175,6 +181,14 @@ public class add_property extends javax.swing.JInternalFrame {
 
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 260, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-back-arrow-24.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -250,8 +264,6 @@ public class add_property extends javax.swing.JInternalFrame {
 
         jCheckBox8.setText("Bachlor");
 
-        jCheckBox9.setText("both");
-
         jButton2.setText("Browse");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,9 +315,7 @@ public class add_property extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox9))
+                                .addComponent(jCheckBox8))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
@@ -381,8 +391,7 @@ public class add_property extends javax.swing.JInternalFrame {
                     .addComponent(jLabel19)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jCheckBox7)
-                        .addComponent(jCheckBox8)
-                        .addComponent(jCheckBox9)))
+                        .addComponent(jCheckBox8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -444,23 +453,15 @@ public class add_property extends javax.swing.JInternalFrame {
          String location =jComboBox8.getSelectedItem().toString();
         System.out.print(location);
         try{
-             DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-           System.out.println("3"); 
-          Connection c4;
-           Statement stmt4;
-            c4 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-           System.out.println("4");
-            stmt4=c4.createStatement();
-             System.out.println("5");
-             ResultSet rs4;
-            rs4 = stmt4.executeQuery("select locality_id from locality_master where city='"+city+"' and location_name='"+location+"'");
-            rs4.next();
-      locality_id = rs4.getInt("locality_id");  
-      c4.close();
+            stmt=c.createStatement();
+            System.out.println("5");
+            rs = stmt.executeQuery("select locality_id from locality_master where city='"+city+"' and location_name='"+location+"'");
+            rs.next();
+            locality_id = rs.getInt("locality_id");  
         }
         catch(SQLException e)
         {
-            
+            JOptionPane.showMessageDialog(null,"Error"+e);
         }
        
 //        System.out.print(locality_id);
@@ -472,11 +473,10 @@ public class add_property extends javax.swing.JInternalFrame {
         System.out.print(facing);
         String preferred="";
           if(jCheckBox7.isSelected())
-            preferred+="  Family";
+            preferred+="Family";
         if(jCheckBox8.isSelected())
-            preferred+=" Bachlor ";
-        if(jCheckBox9.isSelected())
-            preferred+=" both ";
+            preferred+="Bachlor";
+       
         System.out.print(preferred);
         
         String furnishing= jComboBox4.getSelectedItem().toString();
@@ -523,28 +523,18 @@ public class add_property extends javax.swing.JInternalFrame {
         
         String sql ="insert into property_master(owner_id,type,rent,posted_date,area,floor,water,electricity,facing,preferred,furshing,amenties,balcony,available,city,pincode,landmark,colony,locality_id) values("+id+",'"+type+"',"+rent+",sysdate,"+area+","+floor+",'"+water+"','"+electricity+"','"+facing+"','"+preferred+"','"+furnishing+"','"+amenties+"','"+balcony+"','"+available+"','"+city+"','"+pincode+"','"+landmark+"','"+colony+"',"+locality_id+")";
        
-        Statement stmt;
+        
         try{
-        System.out.println("2");
-          DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-           System.out.println("3"); 
-          Connection c;
-            c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-           System.out.println("4");
-            stmt=c.createStatement();
-             System.out.println("5");
-             stmt.executeUpdate(sql);            
-            c.close();
-           JOptionPane.showMessageDialog(null,"Successfully added the property");
-//           owner_page op=new owner_page();
-//           dp1.add(op);
-//           op.setVisible(true);
-        }
-        catch(SQLException e)
-        {
+             stmt1=c.createStatement();
+             stmt1.executeUpdate(sql);            
+            
+             JOptionPane.showMessageDialog(null,"Successfully added the property");
+            }
+            catch(SQLException e)
+           {
             JOptionPane.showMessageDialog(null,"Error"+e);
             
-        }
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -565,26 +555,28 @@ public class add_property extends javax.swing.JInternalFrame {
         String ct=jComboBox6.getSelectedItem().toString();
         try{
             
-             ResultSet rs2;
-              Statement stmt2;
-              Connection c2;
-              DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-           
-            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-             stmt2=c2.createStatement();
-            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
-            while(rs2.next())
+            
+            stmt2=c.createStatement();
+            rs1= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+            while(rs1.next())
             {
-                String l = rs2.getString("location_name");
+                String l = rs1.getString("location_name");
                 jComboBox8.addItem(l);
             }
-            c2.close();
-        }
+           }
         catch(SQLException e){
               JOptionPane.showMessageDialog(null,"Error"+e);
         }
         
     }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        owner_page op=new owner_page();
+        dp1.add(op);
+
+        op.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseClicked
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -600,7 +592,6 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -627,6 +618,7 @@ public class add_property extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JOptionPane jOptionPane2;
     private javax.swing.JPanel jPanel1;
@@ -655,24 +647,19 @@ public class add_property extends javax.swing.JInternalFrame {
         Image newImg= img.getScaledInstance(jLabel11.getWidth(),jLabel11.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon image1 = new ImageIcon(newImg);    
         return  image1;
-        //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public void load() {
          try{
-              ResultSet rs;
-              Statement stmt1;
-              Connection c1;
-              DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-           
-            c1 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-             stmt1=c1.createStatement();
-            rs= stmt1.executeQuery("select distinct city from locality_master ");
+              
+            stmt3=c.createStatement();
+            rs2= stmt3.executeQuery("select distinct city from locality_master ");
     
            
-                while(rs.next())
+                while(rs2.next())
                 {
-                String ct = rs.getString("city");
+                String ct = rs2.getString("city");
                 jComboBox6.addItem(ct);
                 }
                

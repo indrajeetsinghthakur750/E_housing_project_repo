@@ -271,10 +271,10 @@ public class owner_signup extends javax.swing.JInternalFrame {
       
         Statement stmt; 
         try{
-            FileInputStream file_in = new FileInputStream(sf);
-            file_in.toString();
+//            FileInputStream file_in = new FileInputStream(sf);
+//            file_in.toString();
           
-        String sql = "insert into owner(owner_name,email,phone,password,adhar,adhar_image,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+file_in+"','"+status+"')";
+        String sql = "insert into owner(owner_name,email,phone,password,adhar,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+status+"')";
         System.out.println("2");
         DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
         System.out.println("3"); 
@@ -286,7 +286,7 @@ public class owner_signup extends javax.swing.JInternalFrame {
         stmt.executeUpdate(sql);
         JOptionPane.showMessageDialog(this,"You have register successfully");
         }
-        catch(SQLException | FileNotFoundException e)
+        catch(SQLException e )
         {
             JOptionPane.showMessageDialog(null,"Error"+e);
         }

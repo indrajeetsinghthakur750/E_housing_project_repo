@@ -307,9 +307,18 @@ public class MDIframe extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:\
+        Object i =-1;
+          if(id != i)
+          {
            update_property ups = new update_property(id);
            dp1.add(ups);
            ups.setVisible(true);
+          }
+           else 
+          {
+          JOptionPane.showMessageDialog(null,"Please select a property");
+          }
+    
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -365,6 +374,7 @@ public class MDIframe extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        id=-1;
         this.setVisible(false);
         starting_frame sf =new starting_frame();
         sf.setVisible(true);

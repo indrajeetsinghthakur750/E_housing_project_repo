@@ -34,7 +34,7 @@ public class owner_page extends javax.swing.JInternalFrame {
      *
      */
     public static Object id=-1;
-     
+    
         
     /**
      * Creates new form owner_page
@@ -93,7 +93,6 @@ public class owner_page extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setColumnSelectionAllowed(false);
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTable1.setDropMode(javax.swing.DropMode.ON);
         jTable1.setEditingColumn(0);
@@ -102,6 +101,8 @@ public class owner_page extends javax.swing.JInternalFrame {
         jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
         jTable1.setShowVerticalLines(false);
         jTable1.setSurrendersFocusOnKeystroke(true);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -162,8 +163,11 @@ public class owner_page extends javax.swing.JInternalFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-       int row= jTable1.getSelectedRow();
-        id = jTable1.getValueAt(row, 0);
+        id=null;
+       int row=0;
+        row = jTable1.getSelectedRow();
+        Object id1 = jTable1.getValueAt(row, 0);
+        id=id1;
         System.out.print(id);
        
                
@@ -195,7 +199,7 @@ public class owner_page extends javax.swing.JInternalFrame {
           Connection c;
           c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); Statement stmt = c.createStatement();
           ResultSet rs;
-          rs = stmt.executeQuery("select  property_id,type,rent,floor,city,colony,pincode from  property_master where owner_id="+owner_id+"");
+          rs = stmt.executeQuery("select  property_id,type,rent,floor,city,colony,pincode,locality_id from  property_master where owner_id="+owner_id+"");
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
    
     }   catch (SQLException e) {

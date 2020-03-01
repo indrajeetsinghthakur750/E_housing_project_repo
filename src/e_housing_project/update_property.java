@@ -33,17 +33,19 @@ public class update_property extends javax.swing.JInternalFrame {
 Object pid;
     /**
      * Creates new form update_property
+     * @param pid
      */
     public update_property(Object pid) {
         initComponents();
         this.pid=pid;
+
           this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0, 0));
         BasicInternalFrameUI bif = (BasicInternalFrameUI) this.getUI();
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
         load();
-       set_property(id);
+        set_property(this.pid);
     }
 
     /**
@@ -110,6 +112,8 @@ Object pid;
         jComboBox8 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -391,6 +395,16 @@ Object pid;
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 280, -1));
 
         jComboBox6.setBorder(null);
+        jComboBox6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox6ItemStateChanged(evt);
+            }
+        });
+        jComboBox6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox6MouseClicked(evt);
+            }
+        });
         jComboBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox6ActionPerformed(evt);
@@ -411,6 +425,13 @@ Object pid;
             }
         });
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("property Id ");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 368, 500));
 
@@ -452,7 +473,7 @@ Object pid;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String type = jComboBox1.getSelectedItem().toString();
-        int locality_id=0;
+        int locality_id=jComboBox8.getSelectedIndex();
         int rent =Integer.parseInt(jTextField2.getText());
         System.out.print(rent);
 //        String posted_date =jTextField4.getText().toString();
@@ -572,28 +593,28 @@ Object pid;
 
     private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
-        jComboBox8.removeAllItems();
-        String ct=jComboBox6.getSelectedItem().toString();
-        try{
-
-            ResultSet rs2;
-            Statement stmt2;
-            Connection c2;
-            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-
-            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
-            stmt2=c2.createStatement();
-            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
-            while(rs2.next())
-            {
-                String l = rs2.getString("location_name");
-                jComboBox8.addItem(l);
-            }
-            c2.close();
-        }
-        catch(SQLException e){
-            JOptionPane.showMessageDialog(null,"Error"+e);
-        }
+//        jComboBox8.removeAllItems();
+//        String ct=jComboBox6.getSelectedItem().toString();
+//        try{
+//
+//            ResultSet rs2;
+//            Statement stmt2;
+//            Connection c2;
+//            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+//
+//            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+//            stmt2=c2.createStatement();
+//            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+//            while(rs2.next())
+//            {
+//                String l = rs2.getString("location_name");
+//                jComboBox8.addItem(l);
+//            }
+//            c2.close();
+//        }
+//        catch(SQLException e){
+//            JOptionPane.showMessageDialog(null,"Error"+e);
+//        }
 
     }//GEN-LAST:event_jComboBox6ActionPerformed
 
@@ -617,10 +638,64 @@ Object pid;
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
-        owner_page op =new  owner_page();
-        this.setVisible(false);
-        op.setVisible(true);
+       owner_page op=new owner_page();
+           dp1.add(op);
+           
+           op.setVisible(true);
+           id=-1;
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jComboBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox6ItemStateChanged
+        // TODO add your handling code here:
+//          jComboBox8.removeAllItems();
+//        String ct=jComboBox6.getSelectedItem().toString();
+//        try{
+//
+//            ResultSet rs2;
+//            Statement stmt2;
+//            Connection c2;
+//            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+//
+//            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+//            stmt2=c2.createStatement();
+//            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+//            while(rs2.next())
+//            {
+//                String l = rs2.getString("location_name");
+//                jComboBox8.addItem(l);
+//            }
+//            c2.close();
+//        }
+//        catch(SQLException e){
+//            JOptionPane.showMessageDialog(null,"Error"+e);
+//        }
+    }//GEN-LAST:event_jComboBox6ItemStateChanged
+
+    private void jComboBox6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseClicked
+        // TODO add your handling code here:
+//          jComboBox8.removeAllItems();
+//        String ct=jComboBox6.getSelectedItem().toString();
+//        try{
+//
+//            ResultSet rs2;
+//            Statement stmt2;
+//            Connection c2;
+//            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+//
+//            c2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+//            stmt2=c2.createStatement();
+//            rs2= stmt2.executeQuery("select location_name from locality_master where city = '"+ct+"'");
+//            while(rs2.next())
+//            {
+//                String l = rs2.getString("location_name");
+//                jComboBox8.addItem(l);
+//            }
+//            c2.close();
+//        }
+//        catch(SQLException e){
+//            JOptionPane.showMessageDialog(null,"Error"+e);
+//        }
+    }//GEN-LAST:event_jComboBox6MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -657,12 +732,14 @@ Object pid;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
@@ -687,27 +764,45 @@ Object pid;
 
     private void set_property(Object id1) {
        try{
+           
+           jLabel20.setText(id+"");
            System.out.print("HI");
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
           Connection c;
           c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); 
           
-          Statement stmt = c.createStatement();
-          ResultSet rs;
-           System.out.print("HI"+id1);
+          Statement stmt1,stmt = c.createStatement();
+          ResultSet rs,rs1;
+          stmt1 =c.createStatement();
+         
+          System.out.print("HI"+id1);
+          
           rs = stmt.executeQuery("select  * from  property_master where property_id="+id1);
-         rs.next();
+         
+          rs.next();
           String area =rs.getString("area");
           System.out.print("hello"+area);
           jTextField1.setText(area);
+          int locality_id=rs.getInt("locality_id");
+         
+          rs1 =  stmt1.executeQuery("select location_name from locality_master where locality_id="+locality_id);
+          rs1.next();
+          String location_name;
+//          location_name = rs1.getString("location_name");
+//           System.out.println("hello"+location_name);
+        
+         ComboBoxModel<String> mm1 = jComboBox8.getModel();
+          mm1.setSelectedItem(rs1.getString("location_name"));
           
-           String rent = rs.getString("rent");
+           
+          String rent = rs.getString("rent");
           System.out.print("hello"+rent);
           jTextField2.setText(rent);
           
           String city = rs.getString("city");
           System.out.print("hello"+city);
-          jComboBox6.setSelectedItem(city);
+           ComboBoxModel<String> mm2 = jComboBox6.getModel();
+          mm2.setSelectedItem(city);
           
           String pincode = rs.getString("pincode");
           System.out.print("hello"+pincode);
@@ -729,6 +824,7 @@ Object pid;
           int floor = rs.getInt("floor");
           System.out.print("hello"+floor);
             jComboBox2.setSelectedIndex(floor);
+           
            
           
           String facing = rs.getString("facing");
@@ -801,20 +897,30 @@ Object pid;
 
     private void load() {
         try{
-              ResultSet rs;
-              Statement stmt1;
+              ResultSet rs,rs1;
+              Statement stmt1,stmt2;
               Connection c1;
               DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
            
             c1 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
              stmt1=c1.createStatement();
+                    stmt2=c1.createStatement();
             rs= stmt1.executeQuery("select distinct city from locality_master ");
-    
+            rs1= stmt2.executeQuery("select distinct location_name from locality_master ");
            
                 while(rs.next())
                 {
                 String ct = rs.getString("city");
+              
                 jComboBox6.addItem(ct);
+               
+                }
+                
+                while(rs1.next())
+                {
+              
+                String ln= rs1.getString("location_name");
+                jComboBox8.addItem(ln);
                 }
                
          }

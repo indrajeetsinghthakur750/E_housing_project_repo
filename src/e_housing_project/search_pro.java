@@ -6,10 +6,7 @@
 package e_housing_project;
 
 import static e_housing_project.MDIframe.dp1;
-import static e_housing_project.MDIframe.jMenuItem5;
 import static e_housing_project.MDIframe.jMenuItem6;
-import static e_housing_project.owner_page.jTable1;
-import static e_housing_project.starting_frame.owner_id;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -17,7 +14,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import net.proteanit.sql.DbUtils;
@@ -26,10 +22,13 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Indrajeet singh
  */
-public class search_pro extends javax.swing.JInternalFrame {
+public class search_pro extends javax.swing.JInternalFrame  {
 Connection c;
 Statement stmt;
  ResultSet rs,rs2;
+
+    /**
+ 
     /**
      * Creates new form search_pro
      */
@@ -40,7 +39,7 @@ Statement stmt;
         bif.setNorthPane(null);
         Dimension dmnsn = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(dmnsn);
-      
+   
         jMenuItem6.setVisible(true);
         try{
             DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
@@ -152,9 +151,8 @@ Statement stmt;
         jRadioButton42 = new javax.swing.JRadioButton();
         jRadioButton43 = new javax.swing.JRadioButton();
         jRadioButton44 = new javax.swing.JRadioButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jRadioButton46 = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -464,14 +462,16 @@ Statement stmt;
         });
         jPanel2.add(jRadioButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
 
-        jRadioButton31.setText("Bachlors");
+        buttonGroup1.add(jRadioButton31);
+        jRadioButton31.setText("Both");
         jRadioButton31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton31ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        jPanel2.add(jRadioButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, -1, -1));
 
+        buttonGroup1.add(jRadioButton32);
         jRadioButton32.setText("family");
         jRadioButton32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -624,14 +624,17 @@ Statement stmt;
         });
         jPanel2.add(jRadioButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/sunshine-clouds-sky-during-morning-background-blue-white-pastel-heaven-soft-focus-lens-flare-sunlight-abstract-blurred-cyan-gradient-peaceful-nature-open-view-out-windows-beautiful-summer-spring_1253-1093.jpg"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 450, 330));
-
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-single-choice-32.png"))); // NOI18N
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        buttonGroup1.add(jRadioButton46);
+        jRadioButton46.setText("Bachlors");
+        jRadioButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton46ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 460, 640));
 
@@ -706,11 +709,11 @@ Statement stmt;
             }
         });
         jComboBox1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-                jComboBox1CaretPositionChanged(evt);
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jComboBox1InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                jComboBox1CaretPositionChanged(evt);
             }
         });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -1014,10 +1017,15 @@ Statement stmt;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(jTable1.getSelectedRow()!=-1)
+        int row = jTable1.getSelectedRow();
+        if(jTable1.getSelectedRow()!= -1)
         {
-//           int row jTable1.getSelectedRow();
-//           pid=jTable1.getValueAt(row, )
+            
+        Object pid = jTable1.getValueAt(row, 0);
+        property_detail pd = new property_detail(pid);
+        dp1.add(pd);
+        pd.setVisible(true);
+    
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1044,16 +1052,16 @@ Statement stmt;
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
        
-        int row = jTable1.getSelectedRow();
-        if(jTable1.getSelectedRow()!= -1)
-        {
-            
-        Object pid = jTable1.getValueAt(row, 0);
-        property_detail pd = new property_detail(pid);
-        dp1.add(pd);
-        pd.setVisible(true);
-    
-        }
+//        int row = jTable1.getSelectedRow();
+//        if(jTable1.getSelectedRow()!= -1)
+//        {
+//            
+//        Object pid = jTable1.getValueAt(row, 0);
+//        property_detail pd = new property_detail(pid);
+//        dp1.add(pd);
+//        pd.setVisible(true);
+//    
+//        }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jComboBox1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jComboBox1InputMethodTextChanged
@@ -1068,6 +1076,10 @@ Statement stmt;
     private void jComboBox1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseReleased
 // property_search_filter();
     }//GEN-LAST:event_jComboBox1MouseReleased
+
+    private void jRadioButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton46ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton46ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1104,8 +1116,6 @@ Statement stmt;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1148,6 +1158,7 @@ Statement stmt;
     private javax.swing.JRadioButton jRadioButton42;
     private javax.swing.JRadioButton jRadioButton43;
     private javax.swing.JRadioButton jRadioButton44;
+    private javax.swing.JRadioButton jRadioButton46;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
@@ -1313,13 +1324,15 @@ Statement stmt;
           }  
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   
-  if(jRadioButton32.isSelected() || jRadioButton31.isSelected()  )
+  if(jRadioButton32.isSelected() || jRadioButton31.isSelected() || jRadioButton46.isSelected() )
           {
 //             filter= filter.concat(" type =");
           if(jRadioButton32.isSelected())
                filter = filter.concat(" preferred = 'Family' or");
-          if(jRadioButton31.isSelected())
+          if(jRadioButton46.isSelected())
                filter = filter.concat(" preferred = 'Bachlor' or");  
+           if(jRadioButton31.isSelected())
+               filter = filter.concat(" preferred = 'FamilyBachlor' or"); 
         
        
             
