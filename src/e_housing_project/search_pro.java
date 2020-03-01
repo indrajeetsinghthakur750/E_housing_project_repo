@@ -151,8 +151,8 @@ Statement stmt;
         jRadioButton42 = new javax.swing.JRadioButton();
         jRadioButton43 = new javax.swing.JRadioButton();
         jRadioButton44 = new javax.swing.JRadioButton();
-        jLabel20 = new javax.swing.JLabel();
         jRadioButton46 = new javax.swing.JRadioButton();
+        jSeparator11 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -166,6 +166,7 @@ Statement stmt;
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -177,15 +178,15 @@ Statement stmt;
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Select Type");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Select Floor");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Select Budget");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Balcony");
@@ -214,7 +215,7 @@ Statement stmt;
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setText("Posted Since");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, -1, -1));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 440, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 440, 10));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 450, 10));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 450, 10));
         jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 450, 10));
@@ -222,7 +223,7 @@ Statement stmt;
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 450, 10));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 450, 10));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 450, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 450, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 450, 10));
 
         jRadioButton1.setText("1BHK");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -319,7 +320,7 @@ Statement stmt;
                 jRadioButton12ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel2.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         buttonGroup3.add(jRadioButton13);
         jRadioButton13.setText("2k - 3k");
@@ -328,7 +329,7 @@ Statement stmt;
                 jRadioButton13ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        jPanel2.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         buttonGroup3.add(jRadioButton14);
         jRadioButton14.setText("10k +");
@@ -337,7 +338,7 @@ Statement stmt;
                 jRadioButton14ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+        jPanel2.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
 
         buttonGroup3.add(jRadioButton15);
         jRadioButton15.setText("5k - 10k");
@@ -346,7 +347,7 @@ Statement stmt;
                 jRadioButton15ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+        jPanel2.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
 
         buttonGroup3.add(jRadioButton16);
         jRadioButton16.setText("3k - 4k");
@@ -355,7 +356,7 @@ Statement stmt;
                 jRadioButton16ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        jPanel2.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
 
         buttonGroup3.add(jRadioButton17);
         jRadioButton17.setText("4k - 5k");
@@ -364,7 +365,7 @@ Statement stmt;
                 jRadioButton17ActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
+        jPanel2.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
         jRadioButton18.setText("North-west");
         jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -624,9 +625,6 @@ Statement stmt;
         });
         jPanel2.add(jRadioButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, -1, -1));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-single-choice-32.png"))); // NOI18N
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
         buttonGroup1.add(jRadioButton46);
         jRadioButton46.setText("Bachlors");
         jRadioButton46.addActionListener(new java.awt.event.ActionListener() {
@@ -635,8 +633,9 @@ Statement stmt;
             }
         });
         jPanel2.add(jRadioButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, -1));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 450, 10));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 460, 640));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 660));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-single-choice-32.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
@@ -687,7 +686,7 @@ Statement stmt;
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("City");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 50, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 50, -1));
 
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -721,7 +720,7 @@ Statement stmt;
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 160, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 160, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.addItemListener(new java.awt.event.ItemListener() {
@@ -740,6 +739,14 @@ Statement stmt;
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Searched Result");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+
+        jButton3.setText("search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 80, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/37705.jpg"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 2560, 700));
@@ -1079,7 +1086,13 @@ Statement stmt;
 
     private void jRadioButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton46ActionPerformed
         // TODO add your handling code here:
+        property_search_filter();
     }//GEN-LAST:event_jRadioButton46ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+          property_search_filter();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1092,6 +1105,7 @@ Statement stmt;
     private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -1112,7 +1126,6 @@ Statement stmt;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1167,6 +1180,7 @@ Statement stmt;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
