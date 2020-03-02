@@ -515,9 +515,9 @@ Object pid;
         System.out.print(facing);
         String preferred="";
           if(jCheckBox7.isSelected())
-            preferred+="  Family";
+            preferred+="Family";
         if(jCheckBox8.isSelected())
-            preferred+=" Bachlor ";
+            preferred+="Bachlor";
         
         System.out.print(preferred);
         

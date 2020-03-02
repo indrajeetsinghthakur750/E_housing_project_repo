@@ -10,8 +10,10 @@ import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.owner_page.id;
 import static e_housing_project.owner_page.jTable1;
 import static e_housing_project.owner_page.show_property;
+import static e_housing_project.starting_frame.owner_id;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -185,7 +187,7 @@ public class MDIframe extends javax.swing.JFrame {
         fileMenu.add(jMenuItem2);
 
         jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem3.setText("Edit profile");
+        jMenuItem3.setText("owner profile");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -299,10 +301,14 @@ public class MDIframe extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        edit_profile ep = new edit_profile();
-        dp1.add(ep);
-        ep.setVisible(true);
+          try {
+              // TODO add your handling code here:
+              owner_profile op = new owner_profile(owner_id);
+              dp1.add(op);
+              op.setVisible(true);
+          } catch (IOException ex) {
+              Logger.getLogger(MDIframe.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

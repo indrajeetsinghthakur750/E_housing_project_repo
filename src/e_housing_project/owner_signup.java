@@ -8,20 +8,16 @@ import static e_housing_project.starting_frame.mdi;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.WritableImage;
-import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -35,7 +31,8 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class owner_signup extends javax.swing.JInternalFrame {
 
-   public File sf;
+   public File sf,sf1;
+   PreparedStatement stmt;
 
     /**
      * Creates new form
@@ -81,9 +78,9 @@ public class owner_signup extends javax.swing.JInternalFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
@@ -178,13 +175,9 @@ public class owner_signup extends javax.swing.JInternalFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
-        jLabel5.setText("Welcome to the E-Housing Desktop Application : sign up here");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 108, 595, 20));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-add-user-male-80.png"))); // NOI18N
         jLabel1.setAutoscrolls(true);
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 90, 90));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-back-arrow-24.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -193,6 +186,14 @@ public class owner_signup extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jButton3.setText("Upload profile picture");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 788, 164));
 
@@ -269,27 +270,41 @@ public class owner_signup extends javax.swing.JInternalFrame {
         String status ="activate";
        
       
-        Statement stmt; 
+       
         try{
-//            FileInputStream file_in = new FileInputStream(sf);
+            FileInputStream file_in = new FileInputStream(sf.getAbsolutePath());
+            FileInputStream pi = new FileInputStream(sf1.getAbsolutePath());
 //            file_in.toString();
           
-        String sql = "insert into owner(owner_name,email,phone,password,adhar,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+status+"')";
+//        String sql = "insert into owner(owner_name,email,phone,password,adhar,status) values('"+owner_name+"','"+email+"','"+phone+"','"+password+"','"+adhar+"','"+status+"')";
         System.out.println("2");
         DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
         System.out.println("3"); 
         Connection c;
         c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
         System.out.println("4");
-        stmt=c.createStatement();
+        stmt =c.prepareStatement("insert into owner(owner_name,email,phone,password,adhar,adhar_image,status,profile_image) values(?,?,?,?,?,?,?,?)");
+        stmt.setString(1, owner_name);
+        stmt.setString(2, email);
+        stmt.setString(3, phone);
+        stmt.setString(4, password);
+        stmt.setString(5,adhar);
+        stmt.setBinaryStream(6, file_in,file_in.available());
+        stmt.setString(7,status);
+        stmt.setBinaryStream(8, pi, pi.available());
         System.out.println("5");
-        stmt.executeUpdate(sql);
+        
+        stmt.executeUpdate();
         JOptionPane.showMessageDialog(this,"You have register successfully");
         }
         catch(SQLException e )
         {
             JOptionPane.showMessageDialog(null,"Error"+e);
-        }
+        } catch (FileNotFoundException ex) {
+           Logger.getLogger(owner_signup.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (IOException ex) {
+           Logger.getLogger(owner_signup.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -325,10 +340,26 @@ public class owner_signup extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         jFileChooser1.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.images","jpg");
+        jFileChooser1.addChoosableFileFilter(filter);
+        int result = jFileChooser1.showDialog(this, title);
+        if(result == JFileChooser.APPROVE_OPTION){
+          File sf1 = jFileChooser1.getSelectedFile();
+            this.sf1=sf1;
+            String path = sf1.getAbsolutePath();
+            jLabel1.setIcon(ResizeImage1(path));
+            
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -336,7 +367,6 @@ public class owner_signup extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -365,6 +395,16 @@ public class owner_signup extends javax.swing.JInternalFrame {
         ImageIcon image = new ImageIcon(ImagePath);
         Image img = image.getImage();
         Image newImg= img.getScaledInstance(jLabel11.getWidth(),jLabel11.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon image1 = new ImageIcon(newImg);    
+        return  image1;
+        
+        
+    }
+     public Icon ResizeImage1(String ImagePath) {
+         //To change body of generated methods, choose Tools | Templates.
+        ImageIcon image = new ImageIcon(ImagePath);
+        Image img = image.getImage();
+        Image newImg= img.getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon image1 = new ImageIcon(newImg);    
         return  image1;
         

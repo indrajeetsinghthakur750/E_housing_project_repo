@@ -1029,7 +1029,7 @@ Statement stmt;
         {
             
         Object pid = jTable1.getValueAt(row, 0);
-        property_detail pd = new property_detail(pid);
+        property_detail pd = new property_detail(pid,1);
         dp1.add(pd);
         pd.setVisible(true);
     
