@@ -443,6 +443,12 @@ Object pid;
          if(floor==6)
              jLabel9.setText("5th Floor");
          
+         int oid=rs.getInt("owner_id");
+         Statement st=c.createStatement();
+         ResultSet s=st.executeQuery("select * from owner where owner_id="+oid);
+         s.next();
+         String oname=s.getString("owner_name");
+         jLabel6.setText(oname);
          String city = rs.getString("city");
             jLabel28.setText(city);
           
