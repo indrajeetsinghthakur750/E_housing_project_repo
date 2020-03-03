@@ -179,7 +179,7 @@ Object pid;
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagess/icons8-user-96.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Owner name");
+        jLabel6.setText("      Owner name");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Owner");
@@ -229,13 +229,13 @@ Object pid;
         jLabel7.setText("Floor");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 80, -1, -1));
 
-        jLabel9.setText("or");
+        jLabel9.setText("floor");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, 130, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel10.setText("Type :");
+        jLabel10.setText("Type ");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 190, 40));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 330, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 400, 10));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 330, 10));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -243,12 +243,12 @@ Object pid;
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 100, 40));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel12.setText("Rent :");
+        jLabel12.setText("Rent ");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 190, 40));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("Address");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 170, 40));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 170, 40));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Area in sqft.");
@@ -266,6 +266,7 @@ Object pid;
         jLabel17.setText("Facing");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, -1, -1));
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setText("SMS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +275,7 @@ Object pid;
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 190, 40));
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Book Now");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,6 +284,7 @@ Object pid;
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 190, 40));
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("Contact to owner");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +293,7 @@ Object pid;
         });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 190, 40));
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setText("Mail");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,19 +306,19 @@ Object pid;
         jLabel18.setText("Preferred for ");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, -1, -1));
 
-        jLabel5.setText("jLabel4");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 210, -1));
+        jLabel5.setText("posted on");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 210, 10));
 
-        jLabel19.setText("jLabel4");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 210, -1));
+        jLabel19.setText("area in sqft");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 210, 10));
 
-        jLabel20.setText("jLabel4");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 210, -1));
+        jLabel20.setText("furnising");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 210, 10));
 
-        jLabel21.setText("jLabel4");
+        jLabel21.setText("facing");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 210, -1));
 
-        jLabel22.setText("jLabel4");
+        jLabel22.setText("bolcony");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 210, -1));
 
         jLabel23.setText("Location");
@@ -333,7 +337,7 @@ Object pid;
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 80, 40));
         jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 330, 10));
 
-        jLabel25.setText("jLabel4");
+        jLabel25.setText("preferred for");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 130, 10));
 
         jLabel26.setText("Colony");
@@ -365,11 +369,13 @@ Object pid;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
 
         pack();
