@@ -7,9 +7,7 @@ package e_housing_project;
 
 import static e_housing_project.MDIframe.dp1;
 import static e_housing_project.MDIframe.jMenuItem1;
-
 import static e_housing_project.starting_frame.owner_id;
-
 import static e_housing_project.MDIframe.jMenuItem2;
 import static e_housing_project.MDIframe.jMenuItem3;
 import static e_housing_project.MDIframe.jMenuItem4;
@@ -225,7 +223,8 @@ public class owner_page extends javax.swing.JInternalFrame {
         try{
           DriverManager.registerDriver(new oracle.jdbc.OracleDriver()); 
           Connection c;
-          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678"); Statement stmt = c.createStatement();
+          c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+          Statement stmt = c.createStatement();
           ResultSet rs;
           rs = stmt.executeQuery("select  property_id,type,rent,floor,city,colony,pincode,locality_id from  property_master where owner_id="+owner_id+"");
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
